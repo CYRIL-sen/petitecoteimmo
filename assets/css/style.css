@@ -18,6 +18,7 @@
 12 - A propos
 13 - Image Hero
 14 - Logo
+15 - Page Admin
 */
 
 /* Reset de base */
@@ -468,3 +469,39 @@ document.addEventListener('DOMContentLoaded', function () {
 .logo {
   height: 70px; /* Augmente la hauteur ici */
   width: auto;
+  
+/* ==================================
+   15 - Admin
+================================== */
+
+  .admin-dashboard {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.admin-dashboard h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.admin-section {
+  margin-bottom: 40px;
+}
+
+.admin-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #1e3a5f;
+}
+
+.admin-section p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.admin-section a.btn-primary {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 25px;
+}
