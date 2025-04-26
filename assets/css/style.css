@@ -17,6 +17,7 @@
 11 - Admin
 12 - A propos
 13 - Image Hero
+14 - Logo
 */
 
 /* Reset de base */
@@ -459,3 +460,11 @@ document.addEventListener('DOMContentLoaded', function () {
   transform: scale(1.05);     /* Zoom léger */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
+
+/* ==================================
+   14 - Logo
+================================== */
+  
+.logo {
+  height: 70px; /* Augmente la hauteur ici */
+  width: auto;
