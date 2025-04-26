@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Petite Côte Immo - Trouvez votre terrain</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Intégration de Font Awesome pour les icônes des réseaux sociaux -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- En-tête -->
+  <!-- Header -->
   <header class="header">
     <div class="container header-container">
       <a href="index.html">
-        <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo" />
+        <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
       </a>
       <nav>
         <ul class="nav-links">
@@ -29,57 +27,54 @@
     </div>
   </header>
 
-  <!-- Section Hero -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-wrapper">
-      <img src="assets/images/hero/petitecote-hero.jpg" alt="Petite Côte" class="hero-image" />
+      <img src="assets/images/hero/petitecote-hero.jpg" alt="Petite Côte" class="hero-image">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1>Votre terrain, votre futur sur la Petite Côte</h1>
-        <a href="terrains.html" class="btn-primary">Explorer les opportunités</a>
+        <a href="#" class="btn-primary">Explorer les opportunités</a>
+
+        <form class="search-form">
+          <select name="localisation">
+            <option>Localisation</option>
+            <option>Popenguine</option>
+            <option>Ndayane</option>
+            <option>Yenne</option>
+          </select>
+          <select name="type">
+            <option>Type de terrain</option>
+            <option>Résidentiel</option>
+            <option>Agricole</option>
+            <option>Commercial</option>
+          </select>
+          <input type="text" placeholder="Budget (€)">
+          <input type="text" placeholder="Superficie min. (m²)">
+          <button type="submit" class="btn-secondary">Rechercher</button>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- Formulaire de recherche -->
-  <section class="search-form">
-    <form>
-      <select name="localisation">
-        <option>Localisation</option>
-        <option>Popenguine</option>
-        <option>Ndayane</option>
-        <option>Yenne</option>
-      </select>
-      <select name="type">
-        <option>Type de terrain</option>
-        <option>Résidentiel</option>
-        <option>Agricole</option>
-        <option>Commercial</option>
-      </select>
-      <input type="text" placeholder="Budget (€)" />
-      <input type="text" placeholder="Superficie min. (m²)" />
-      <button type="submit" class="btn-secondary">Rechercher</button>
-    </form>
-  </section>
-
-  <!-- Terrains à la une -->
+  <!-- Featured Terrains -->
   <section class="featured-terrains">
     <h2>Nos terrains à la une</h2>
     <div class="terrain-cards">
       <div class="terrain-card">
-        <img src="assets/images/terrains/terrain1.jpg" alt="Terrain résidentiel" />
+        <img src="assets/images/terrains/terrain1.jpg" alt="Terrain résidentiel">
         <h3>Terrain résidentiel</h3>
         <p>4500 m²</p>
         <a href="terrain.html" class="btn-link">Voir le terrain</a>
       </div>
       <div class="terrain-card">
-        <img src="assets/images/terrains/terrain2.jpg" alt="Terrain agricole" />
+        <img src="assets/images/terrains/terrain2.jpg" alt="Terrain agricole">
         <h3>Terrain agricole</h3>
         <p>10 hectares</p>
         <a href="terrain.html" class="btn-link">Voir le terrain</a>
       </div>
       <div class="terrain-card">
-        <img src="assets/images/terrains/terrain3.jpg" alt="Terrain commercial" />
+        <img src="assets/images/terrains/terrain3.jpg" alt="Terrain commercial">
         <h3>Terrain commercial</h3>
         <p>1.200 m²</p>
         <a href="terrain.html" class="btn-link">Voir le terrain</a>
@@ -87,34 +82,34 @@
     </div>
   </section>
 
-  <!-- Pourquoi choisir Petite Côte Immo -->
+  <!-- Why Choose Us -->
   <section class="why-choose-us">
     <h2>Pourquoi choisir Petite Côte Immo ?</h2>
     <div class="advantages">
       <div class="advantage">
-        <img src="assets/images/icons/location-icon.svg" alt="Fiabilité" />
+        <img src="assets/images/icons/location-icon.svg" alt="Fiabilité">
         <h3>Fiabilité</h3>
         <p>Garantissez votre confiance.</p>
       </div>
       <div class="advantage">
-        <img src="assets/images/icons/surface-icon.svg" alt="Expertise locale" />
+        <img src="assets/images/icons/surface-icon.svg" alt="Expertise locale">
         <h3>Expertise locale</h3>
         <p>Connaissance du terrain.</p>
       </div>
       <div class="advantage">
-        <img src="assets/images/icons/price-icon.svg" alt="Opportunités rares" />
+        <img src="assets/images/icons/price-icon.svg" alt="Opportunités rares">
         <h3>Opportunités rares</h3>
         <p>Projets exclusifs.</p>
       </div>
       <div class="advantage">
-        <img src="assets/images/icons/terrain-icon.svg" alt="Accompagnement" />
+        <img src="assets/images/icons/terrain-icon.svg" alt="Accompagnement">
         <h3>Accompagnement personnalisé</h3>
         <p>Suivi de A à Z.</p>
       </div>
     </div>
   </section>
 
-  <!-- Comment ça marche -->
+  <!-- How It Works -->
   <section class="how-it-works">
     <h2>Comment ça marche ?</h2>
     <div class="steps">
@@ -133,24 +128,24 @@
     </div>
   </section>
 
-  <!-- Pied de page -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p>© 2025 Petite Côte Immo</p>
-      <nav>
+      <nav class="footer-nav">
         <a href="a-propos.html">À propos</a> |
         <a href="contact.html">Contact</a> |
         <a href="#">Société</a>
       </nav>
       <div class="social-links">
-        <a href="https://instagram.com/toncompte" target="_blank" class="social-icon">
-          <i class="fab fa-instagram"></i>
+        <a href="https://instagram.com/toncompte" target="_blank">
+          <img src="assets/images/icons/instagram-icon.svg" alt="Instagram" class="social-icon">
         </a>
-        <a href="https://facebook.com/toncompte" target="_blank" class="social-icon">
-          <i class="fab fa-facebook-f"></i>
+        <a href="https://facebook.com/toncompte" target="_blank">
+          <img src="assets/images/icons/facebook-icon.svg" alt="Facebook" class="social-icon">
         </a>
-        <a href="https://linkedin.com/in/toncompte" target="_blank" class="social-icon">
-          <i class="fab fa-linkedin-in"></i>
+        <a href="https://linkedin.com/in/toncompte" target="_blank">
+          <img src="assets/images/icons/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
         </a>
       </div>
     </div>
