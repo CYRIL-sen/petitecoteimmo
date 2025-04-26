@@ -62,7 +62,9 @@ a {
 }
 
 .logo {
-  height: 60px;
+  height: 90px; /* Plus grand */
+  width: auto;
+  max-width: 250px; /* Facultatif pour éviter qu'il dépasse */
 }
 
 .nav-links {
