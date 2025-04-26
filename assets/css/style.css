@@ -485,6 +485,18 @@ a {
   background-color: #c29d2e;
   transform: scale(1.05);
 }
+.filters {
+  /* Ton style actuel (flex, padding, background, etc.) */
+  
+  transition: all 0.4s ease; /* ← Tu ajoutes ça ici */
+}
+
+.filters select,
+.filters input,
+.filters button {
+  transition: all 0.4s ease; /* ← Et ici aussi */
+}
+
 
 /* Responsive filtres */
 @media (max-width: 768px) {
@@ -579,6 +591,23 @@ a {
   .filters button {
     width: 100%;
     max-width: 300px; /* Limite pour éviter que ça soit énorme */
+    margin: 8px 0;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .filters select,
+  .filters input,
+  .filters button {
+    width: 100%;
+    max-width: 300px;
     margin: 8px 0;
     font-size: 1rem;
     padding: 10px 15px;
