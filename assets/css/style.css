@@ -14,6 +14,7 @@
 08 - Blog (blog.html)
 09 - Page contact (contact.html)
 10 - Animation au scroll (header)
+11 - Admin
 */
 
 /* Reset de base */
@@ -361,3 +362,43 @@ document.addEventListener('DOMContentLoaded', function () {
     form.reset();
   });
 });
+
+/* ==================================
+   11 - Admin
+================================== */
+
+
+/* Admin Dashboard */
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.admin-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-card h3 {
+  font-size: 1.4rem;
+  color: #1e3a5f;
+}
+
+.admin-card p {
+  font-size: 1rem;
+}
+
+.admin-card a {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
