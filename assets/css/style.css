@@ -15,6 +15,7 @@
 09 - Page contact (contact.html)
 10 - Animation au scroll (header)
 11 - Admin
+12 - A propos
 */
 
 /* Reset de base */
@@ -402,3 +403,17 @@ document.addEventListener('DOMContentLoaded', function () {
   align-self: flex-start;
 }
 
+/* ==================================
+   12 - A propos
+================================== */
+
+/* À propos */
+.about-section {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
