@@ -32,6 +32,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function afficherConfirmation(message) {
+  const confirmation = document.getElementById('confirmationMessage');
+  confirmation.textContent = message;
+  confirmation.classList.add('show');
+
+  setTimeout(() => {
+    confirmation.classList.remove('show');
+  }, 3000); // Disparaît après 3 secondes
+}
+
   if (ajoutForm) {
     ajoutForm.addEventListener('submit', function (e) {
       e.preventDefault();
