@@ -575,18 +575,18 @@ a {
 
 /* Style pour .page-title */
 
+/* 12 - Page-Titre amélioré */
 .page-title {
-  margin-top: 160px; /* Ajuste selon la hauteur du filtre */
+  margin-top: 120px; /* Assez haut pour être visible sous le header */
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1a1a1a;
+  padding: 20px 0;
 }
 
 .page-title h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color: #1e3a5f;
-  margin-bottom: 0;
+  margin-bottom: 10px;
+}
 }
 
 
