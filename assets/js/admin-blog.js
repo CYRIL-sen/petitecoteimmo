@@ -1,18 +1,20 @@
-// Script pour gérer les articles du blog
+// Script pour gérer les articles du blog dans l'admin
 
 document.addEventListener('DOMContentLoaded', function () {
   const adminBlog = document.getElementById('adminBlog');
   const ajoutArticleForm = document.getElementById('ajoutArticleForm');
 
-  // Charger les articles existants
-  fetch('blog.json')
-    .then(response => response.json())
-    .then(data => {
-      afficherArticles(data.articles);
-    })
-    .catch(error => {
-      console.error('Erreur chargement articles :', error);
-    });
+  if (adminBlog) {
+    // Charger les articles existants
+    fetch('../admin/blog.json')
+      .then(response => response.json())
+      .then(data => {
+        afficherArticles(data.articles);
+      })
+      .catch(error => {
+        console.error('Erreur chargement articles :', error);
+      });
+  }
 
   function afficherArticles(articles) {
     adminBlog.innerHTML = '';
@@ -29,33 +31,34 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Ajouter un nouvel article (simulation)
-  ajoutArticleForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+  if (ajoutArticleForm) {
+    ajoutArticleForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    const nouvelArticle = {
-      titre: document.getElementById('titreArticle').value,
-      extrait: document.getElementById('extrait').value,
-      image: document.getElementById('imageArticle').value
-    };
+      const nouvelArticle = {
+        titre: document.getElementById('titreArticle').value,
+        extrait: document.getElementById('extrait').value,
+        image: document.getElementById('imageArticle').value
+      };
 
-    const div = document.createElement('div');
-    div.classList.add('admin-card');
-    div.innerHTML = `
-      <h3>${nouvelArticle.titre}</h3>
-      <p>${nouvelArticle.extrait}</p>
-      <img src="../${nouvelArticle.image}" alt="${nouvelArticle.titre}" style="width:100%; height:150px; object-fit:cover; border-radius:8px; margin-top:10px;">
-    `;
-    adminBlog.appendChild(div);
+      const div = document.createElement('div');
+      div.classList.add('admin-card');
+      div.innerHTML = `
+        <h3>${nouvelArticle.titre}</h3>
+        <p>${nouvelArticle.extrait}</p>
+        <img src="../${nouvelArticle.image}" alt="${nouvelArticle.titre}" style="width:100%; height:150px; object-fit:cover; border-radius:8px; margin-top:10px;">
+      `;
+      adminBlog.appendChild(div);
 
-    ajoutArticleForm.reset();
-    alert('Article ajouté (simulation)');
-  });
+      ajoutArticleForm.reset();
+      alert('Article ajouté (simulation)');
+    });
+  }
 
-  // Supprimer un article (simulation)
+  // Fonction de suppression simulée
   window.supprimerArticle = function(index) {
     alert('Suppression simulée pour l\'article #' + (index + 1));
-    // Ici aussi, suppression vraie nécessiterait un serveur
+    // En vrai, il faudrait re-générer l'affichage sans l'article supprimé
   };
 });
 
