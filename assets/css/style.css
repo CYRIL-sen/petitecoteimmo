@@ -22,6 +22,7 @@
 16 - Center
 17 - Page terrain
 18 - Retour terrain
+19 - Footer
 */
 
 /* Reset de base */
@@ -615,4 +616,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
 .retour-terrain .btn-primary:hover {
   background-color: #345b87;
+}
+/* Structure pour que le footer reste en bas */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Pousse le footer tout en bas si nécessaire */
+footer.footer {
+  margin-top: auto;
+}
+
+/* Style du footer */
+.footer {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.footer nav {
+  margin-top: 10px;
+}
+
+.footer nav a {
+  color: #1e3a5f;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer nav a:hover {
+  text-decoration: underline;
+}
+
+/* Réseaux sociaux */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
 }
