@@ -3,85 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Détail du Terrain - Petite Côte Immo</title>
+  <title>Détail Terrain - Petite Côte Immo</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/terrain.css">
 </head>
 <body>
 
-<!-- Header -->
-<header class="header">
-  <div class="container header-container">
-    <a href="index.html">
-      <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
-    </a>
-    <nav class="nav-container">
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="terrains.html">Terrains</a></li>
-        <li><a href="deposer.html">Déposer</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- Détail du terrain -->
-<section class="terrain-detail">
-  <div class="container">
-    <h1 id="titreTerrain">Terrain résidentiel à Popenguine</h1>
-
-    <!-- Galerie d'images -->
-    <div class="terrain-gallery">
-      <img src="assets/images/terrains/terrain1.jpg" alt="Terrain Photo 1">
-      <img src="assets/images/terrains/terrain2.jpg" alt="Terrain Photo 2">
-      <img src="assets/images/terrains/terrain3.jpg" alt="Terrain Photo 3">
-      <img src="assets/images/terrains/terrain4.jpg" alt="Terrain Photo 4">
-      <img src="assets/images/terrains/terrain5.jpg" alt="Terrain Photo 5">
+  <!-- Header classique -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
+        </a>
+      </div>
+      <nav class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="terrains.html">Terrains</a></li>
+          <li><a href="deposer.html">Déposer</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Informations du terrain -->
-    <div class="terrain-detail-info">
-      <p id="localisationTerrain">📍 Localisation: Popenguine</p>
-      <p id="superficieTerrain">📐 Superficie: 4500 m²</p>
-      <p id="prixTerrain">💰 Prix: 30 000 €</p>
-      <p id="typeTerrain">🏡 Type: Résidentiel</p>
+  <!-- Contenu principal -->
+  <main class="terrain-detail">
+    <div class="container terrain-wrapper">
+
+      <!-- Partie gauche (photos + infos terrain) -->
+      <div class="terrain-left">
+        <div class="terrain-gallery">
+          <img id="main-photo" src="assets/images/terrains/terrain-generique.jpg" alt="Terrain à vendre" class="main-photo">
+          <div class="thumbnail-row" id="thumbnails">
+            <!-- Miniatures photos ici -->
+          </div>
+        </div>
+
+        <h1 id="terrain-title">Titre du Terrain</h1>
+        <div class="terrain-info">
+          <p class="terrain-price" id="terrain-price">Prix</p>
+          <p class="terrain-surface" id="terrain-surface">Surface</p>
+          <p class="terrain-address" id="terrain-address">Adresse</p>
+        </div>
+
+        <div class="terrain-description">
+          <h2>Description</h2>
+          <p id="terrain-description">Texte de description du terrain...</p>
+        </div>
+
+        <div class="terrain-map">
+          <h2>Emplacement</h2>
+          <div id="map" style="height: 300px; background-color: #eee; border-radius: 12px;">Carte à insérer</div>
+        </div>
+      </div>
+
+      <!-- Partie droite (formulaire contact) -->
+      <aside class="terrain-contact">
+        <div class="contact-card">
+          <h2>Contacter l'agence</h2>
+          <form class="contact-form">
+            <input type="text" placeholder="Prénom *" required>
+            <input type="text" placeholder="Nom *" required>
+            <input type="email" placeholder="Email *" required>
+            <input type="tel" placeholder="Téléphone">
+            <textarea placeholder="Votre message..."></textarea>
+            <button type="submit" class="btn-primary">Envoyer</button>
+          </form>
+        </div>
+      </aside>
+
     </div>
+  </main>
 
-    <!-- Carte Google Map -->
-    <div id="map" style="height: 400px; margin-top: 30px; border-radius: 12px;"></div>
-
-    <!-- Bouton retour -->
-    <div class="retour-terrain">
-      <a href="terrains.html" class="btn-primary">← Retour aux terrains</a>
+  <!-- Footer classique -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Petite Côte Immo</p>
+      <nav>
+        <a href="a-propos.html">À propos</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="#">Société</a>
+      </nav>
+      <div class="social-links">
+        <a href="#"><img src="assets/images/icons/instagram-icon.svg" alt="Instagram" class="social-icon"></a>
+        <a href="#"><img src="assets/images/icons/facebook-icon.svg" alt="Facebook" class="social-icon"></a>
+        <a href="#"><img src="assets/images/icons/linkedin-icon.svg" alt="LinkedIn" class="social-icon"></a>
+      </div>
     </div>
+  </footer>
 
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p>© 2025 Petite Côte Immo</p>
-    <nav>
-      <a href="a-propos.html">À propos</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="#">Société</a>
-    </nav>
-    <div class="social-links">
-      <a href="#"><img src="assets/images/icons/instagram-icon.svg" alt="Instagram" class="social-icon"></a>
-      <a href="#"><img src="assets/images/icons/facebook-icon.svg" alt="Facebook" class="social-icon"></a>
-      <a href="#"><img src="assets/images/icons/linkedin-icon.svg" alt="LinkedIn" class="social-icon"></a>
-    </div>
-  </div>
-</footer>
-
-<!-- JS terrain dynamique -->
-<script src="assets/js/terrain.js"></script>
-
-<!-- API Google Map -->
-<script async src="https://maps.googleapis.com/maps/api/js?key=TA_CLE_API_ICI&callback=initMap"></script>
-
+  <script src="assets/js/terrain.js"></script>
 </body>
 </html>
