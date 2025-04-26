@@ -178,6 +178,12 @@ a {
   font-weight: bold;
 }
 
+btn-link:hover {
+  color: #c29d2e;
+  text-decoration: underline;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+
 /* Why Choose Us */
 .why-choose-us {
   padding: 60px 20px;
