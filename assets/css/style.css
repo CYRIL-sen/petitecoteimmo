@@ -380,6 +380,12 @@ a {
   width: auto;
 }
 
+.advantages img {
+  width: 60px; /* Largeur contrôlée */
+  height: auto; /* Garde les proportions */
+  margin-bottom: 10px;
+}
+
 /* ================================
    15 - Page Admin
 ================================ */
