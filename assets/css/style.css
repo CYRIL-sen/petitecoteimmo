@@ -585,28 +585,14 @@ a {
 }
 
 
-@media (max-width: 768px) {
-  .filters {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
+/* 14 - Optimisation Mobile filtres */
 
-  .filters select,
-  .filters input,
-  .filters button {
-    width: 100%;
-    max-width: 300px; /* Limite pour éviter que ça soit énorme */
-    margin: 8px 0;
-    font-size: 1rem;
-    padding: 10px 15px;
-  }
-}
 @media (max-width: 768px) {
   .filters {
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
+    gap: 10px;
   }
 
   .filters select,
@@ -615,21 +601,24 @@ a {
     width: 100%;
     max-width: 300px;
     margin: 8px 0;
-    font-size: 1rem;
-    padding: 10px 15px;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+    border-radius: 10px;
   }
 }
-@media (max-width: 768px) {
-  .filters select,
-  .filters input,
-  .filters button {
-    padding: 10px 14px;
-    min-width: auto;
-    font-size: 0.9rem;
-  }
 
-  .filters {
-    gap: 10px;
-    padding: 15px;
-  }
+/* 15 - Effets Hover filtres */
+.filters select:hover,
+.filters input:hover,
+.filters button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* 16 - Animation Douce Formulaires */
+.filters select,
+.filters input,
+.filters button {
+  transition: all 0.3s ease;
 }
