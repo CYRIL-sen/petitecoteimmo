@@ -247,7 +247,7 @@ a {
 }
 
 .main-icon {
-  width: 120px; /* <-- réduit l'icône */
+  width: 60px; /* <-- réduit l'icône */
   margin: 20px auto;
 }
 
