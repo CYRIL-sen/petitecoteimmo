@@ -132,19 +132,35 @@ a {
   margin-bottom: 20px;
 }
 
+/* Bouton principal Hero */
+
 .btn-primary {
   background-color: #1e3a5f;
-  color: white;
-  padding: 12px 30px;
+  color: #ffffff;
+  padding: 12px 25px;
   border-radius: 8px;
+  font-size: 1rem;
   font-weight: bold;
-  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto; /* <-- Important */
+  max-width: 90%; /* <-- Limite pour mobile */
+  text-align: center;
+  white-space: nowrap; /* <-- Ne jamais couper sur deux lignes */
 }
 
 .btn-primary:hover {
   background-color: #345b87;
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Adaptation Mobile */
+@media (max-width: 768px) {
+  .btn-primary {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
 }
 
 .hero-search-form {
