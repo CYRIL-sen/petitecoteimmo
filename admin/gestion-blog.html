@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gérer le Blog - Petite Côte Immo Admin</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Admin Header -->
+  <header class="header">
+    <div class="container header-container">
+      <h1 style="color: white;">Gestion du Blog</h1>
+    </div>
+  </header>
+
+  <!-- Gestion Blog -->
+  <section class="featured-terrains">
+    <div class="container">
+      <h2>Articles existants</h2>
+
+      <div class="admin-blog" id="adminBlog">
+        <!-- Les articles chargés ici automatiquement -->
+      </div>
+
+      <h2>Ajouter un nouvel article</h2>
+
+      <form id="ajoutArticleForm" class="deposer-form">
+
+        <div class="form-group">
+          <label for="titreArticle">Titre de l'article</label>
+          <input type="text" id="titreArticle" required>
+        </div>
+
+        <div class="form-group">
+          <label for="extrait">Extrait</label>
+          <textarea id="extrait" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="imageArticle">Lien de l'image</label>
+          <input type="text" id="imageArticle" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Ajouter l'article</button>
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Petite Côte Immo</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/admin-blog.js"></script>
+
+</body>
+</html>
 
