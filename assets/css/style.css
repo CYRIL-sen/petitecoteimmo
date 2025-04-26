@@ -50,58 +50,49 @@ a {
 }
 
 /* 03 - Header */
+/* Header */
 .header {
   background-color: #0b2239;
-  padding: 20px 0;
+  padding: 12px 0; /* Réduit la hauteur de la bande */
 }
 
+/* Logo */
+.logo {
+  height: 80px; /* Taille adaptée pour le logo : reste bien visible sans être énorme */
+  width: auto;
+}
+
+/* Conteneur Header */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.logo-container {
-  flex: 0 0 auto;
-}
-
-.nav-container {
-  flex: 1;
-  text-align: right;
-}
-
+/* Liens de navigation */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
-  justify-content: flex-end;
-  align-items: center;
 }
 
 .nav-links a {
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
-  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #d4af37; /* effet hover doré */
+  color: #d4af37; /* Survol doré */
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: #ffffff;
-  font-weight: bold;
-}
-
+/* Effet au scroll */
 .header.scrolled {
-  background-color: #0b2239cc;
+  background-color: rgba(11, 34, 57, 0.95); /* Légère transparence au scroll */
   transition: background 0.3s ease;
 }
 
