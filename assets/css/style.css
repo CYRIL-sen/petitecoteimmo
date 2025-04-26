@@ -507,3 +507,33 @@ document.addEventListener('DOMContentLoaded', function () {
   padding: 10px 25px;
   text-align: center;
 }
+
+  .admin-dashboard .container {
+  max-width: 700px;
+  margin: 0 auto; /* Centre le bloc */
+  padding: 20px;
+  text-align: center; /* Centre tout le texte et boutons */
+}
+
+.admin-section {
+  margin-bottom: 40px;
+}
+
+.admin-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #1e3a5f;
+}
+
+.admin-section p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.admin-section a.btn-primary {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 25px;
+  text-align: center;
+}
