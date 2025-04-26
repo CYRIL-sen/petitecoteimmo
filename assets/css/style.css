@@ -58,6 +58,52 @@ a {
   padding: 0 20px;
 }
 
+.why-choose-us {
+  background: #ffffff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.advantage {
+  flex: 1 1 200px;
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.advantage:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.advantage img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.advantage h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+
+.advantage p {
+  font-size: 1rem;
+  color: #555;
+}
 /* ================================
    03 - Header
 ================================ */
