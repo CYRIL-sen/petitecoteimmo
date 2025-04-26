@@ -11,8 +11,12 @@
   <!-- Header -->
   <header class="header">
     <div class="container header-container">
-      <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
-      <nav>
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
+        </a>
+      </div>
+      <nav class="nav-container">
         <ul class="nav-links">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="terrains.html">Terrains</a></li>
@@ -25,71 +29,77 @@
     </div>
   </header>
 
-  <!-- Terrains List -->
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-wrapper small-hero">
+      <img src="assets/images/hero/petitecote-hero.jpg" alt="Nos terrains" class="hero-image">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Nos terrains disponibles</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Liste des terrains -->
   <section class="featured-terrains">
-    <h2>Nos terrains</h2>
-    <div class="terrain-cards">
+    <div class="container">
+      <h2>Découvrez nos terrains</h2>
+      <div class="terrain-cards">
 
-      <div class="terrain-card">
-        <img src="assets/images/terrains/terrain1.jpg" alt="Terrain à Popenguine">
-        <h3>Terrain à Popenguine</h3>
-        <p>Superficie : 450m² - Prix : 15 000 €</p>
-        <a href="terrain.html" class="btn-link">Voir le terrain</a>
+        <div class="terrain-card">
+          <img src="assets/images/terrains/terrain1.jpg" alt="Terrain à Popenguine">
+          <h3>Terrain à Popenguine</h3>
+          <p>Superficie : 450m² - Prix : 15 000 €</p>
+          <a href="terrain.html" class="btn-link">Voir le terrain</a>
+        </div>
+
+        <div class="terrain-card">
+          <img src="assets/images/terrains/terrain2.jpg" alt="Terrain à Ndayane">
+          <h3>Terrain à Ndayane</h3>
+          <p>Superficie : 1200m² - Prix : 32 000 €</p>
+          <a href="terrain.html" class="btn-link">Voir le terrain</a>
+        </div>
+
+        <div class="terrain-card">
+          <img src="assets/images/terrains/terrain3.jpg" alt="Terrain à Yenne">
+          <h3>Terrain à Yenne</h3>
+          <p>Superficie : 800m² - Prix : 20 000 €</p>
+          <a href="terrain.html" class="btn-link">Voir le terrain</a>
+        </div>
+
+        <div class="terrain-card">
+          <img src="assets/images/terrains/terrain4.jpg" alt="Terrain Agricole">
+          <h3>Terrain Agricole</h3>
+          <p>Superficie : 5 hectares - Prix : 80 000 €</p>
+          <a href="terrain.html" class="btn-link">Voir le terrain</a>
+        </div>
+
       </div>
-
-      <div class="terrain-card">
-        <img src="assets/images/terrains/terrain2.jpg" alt="Terrain à Ndayane">
-        <h3>Terrain à Ndayane</h3>
-        <p>Superficie : 1200m² - Prix : 32 000 €</p>
-        <a href="terrain.html" class="btn-link">Voir le terrain</a>
-      </div>
-
-      <div class="terrain-card">
-        <img src="assets/images/terrains/terrain3.jpg" alt="Terrain à Yenne">
-        <h3>Terrain à Yenne</h3>
-        <p>Superficie : 800m² - Prix : 20 000 €</p>
-        <a href="terrain.html" class="btn-link">Voir le terrain</a>
-      </div>
-
-      <div class="terrain-card">
-        <img src="assets/images/terrains/terrain4.jpg" alt="Terrain agricole">
-        <h3>Terrain Agricole</h3>
-        <p>Superficie : 5 hectares - Prix : 80 000 €</p>
-        <a href="terrain.html" class="btn-link">Voir le terrain</a>
-      </div>
-
-      <div class="terrain-card">
-        <img src="assets/images/terrains/terrain5.jpg" alt="Terrain bord de mer">
-        <h3>Terrain Bord de mer</h3>
-        <p>Superficie : 600m² - Prix : 50 000 €</p>
-        <a href="terrain.html" class="btn-link">Voir le terrain</a>
-      </div>
-
     </div>
   </section>
 
   <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p>© 2025 Petite Côte Immo</p>
-    <nav>
-      <a href="a-propos.html">À propos</a> | 
-      <a href="contact.html">Contact</a> | 
-      <a href="#">Société</a>
-    </nav>
-    <div class="social-links">
-      <a href="https://instagram.com/toncompte" target="_blank">
-        <img src="assets/images/icons/instagram-icon.svg" alt="Instagram" class="social-icon">
-      </a>
-      <a href="https://facebook.com/toncompte" target="_blank">
-        <img src="assets/images/icons/facebook-icon.svg" alt="Facebook" class="social-icon">
-      </a>
-      <a href="https://linkedin.com/in/toncompte" target="_blank">
-        <img src="assets/images/icons/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
-      </a>
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Petite Côte Immo</p>
+      <nav>
+        <a href="a-propos.html">À propos</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="#">Société</a>
+      </nav>
+      <div class="social-links">
+        <a href="https://instagram.com/toncompte" target="_blank">
+          <img src="assets/images/icons/instagram-icon.svg" alt="Instagram" class="social-icon">
+        </a>
+        <a href="https://facebook.com/toncompte" target="_blank">
+          <img src="assets/images/icons/facebook-icon.svg" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://linkedin.com/in/toncompte" target="_blank">
+          <img src="assets/images/icons/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
