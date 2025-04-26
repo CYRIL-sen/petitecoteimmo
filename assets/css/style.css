@@ -142,14 +142,18 @@ a {
 /* 05 - Formulaire de recherche */
 .search-form {
   background: #ffffff;
-  margin-top: -50px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 15px;
+  margin-top: 20px;
+  margin-bottom: -40px; /* pour chevaucher légèrement sur le hero */
+  position: relative;
+  z-index: 10; /* pour passer au-dessus du hero */
+}
 }
 
 .search-form select,
