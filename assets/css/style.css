@@ -89,8 +89,11 @@ a {
   transition: background 0.3s ease;
 }
 
+/* Effet hover sur les boutons primaires */
 .btn-primary:hover {
   background-color: #345b87;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 /* Search Form */
