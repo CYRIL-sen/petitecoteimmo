@@ -15,7 +15,7 @@
 09 - Page contact (contact.html)
 10 - Animation au scroll (header)
 11 - Admin
-12 - A propos
+12 - À propos
 13 - Image Hero
 14 - Logo
 15 - Page Admin
@@ -25,7 +25,9 @@
 19 - Footer
 */
 
-/* Reset de base */
+/* ================================
+   01 - Reset général
+================================ */
 * {
   margin: 0;
   padding: 0;
@@ -37,6 +39,9 @@ body {
   color: #1a1a1a;
   line-height: 1.6;
   background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -44,14 +49,18 @@ a {
   color: inherit;
 }
 
-/* Container général */
+/* ================================
+   02 - Structure générale
+================================ */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Header */
+/* ================================
+   03 - Header
+================================ */
 .header {
   background-color: #0b2239;
   padding: 20px 0;
@@ -64,7 +73,8 @@ a {
 }
 
 .logo {
-  height: 60px;
+  height: 70px;
+  width: auto;
 }
 
 .nav-links {
@@ -78,7 +88,9 @@ a {
   font-weight: bold;
 }
 
-/* Hero Section */
+/* ================================
+   04 - Hero Section
+================================ */
 .hero {
   position: relative;
   width: 100%;
@@ -113,17 +125,18 @@ a {
   padding: 12px 30px;
   border-radius: 5px;
   font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-/* Effet hover sur les boutons primaires */
-.btn-primary:hover {
-  background-color: #345b87;
-  transform: scale(1.05);
   transition: all 0.3s ease;
 }
 
-/* Search Form */
+.btn-primary:hover {
+  background-color: #345b87;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   05 - Formulaire de recherche
+================================ */
 .search-form {
   background: #ffffff;
   margin-top: -40px;
@@ -162,7 +175,9 @@ a {
   background-color: #c29d2e;
 }
 
-/* Featured Terrains */
+/* ================================
+   06 - Liste des terrains
+================================ */
 .featured-terrains {
   padding: 60px 20px;
   text-align: center;
@@ -205,110 +220,55 @@ a {
   font-weight: bold;
 }
 
-btn-link:hover {
+.btn-link:hover {
   color: #c29d2e;
   text-decoration: underline;
   transform: scale(1.05);
   transition: all 0.3s ease;
-
-/* Why Choose Us */
-.why-choose-us {
-  padding: 60px 20px;
-  background-color: #ffffff;
-  text-align: center;
 }
 
-.advantages {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-.advantage img {
-  width: 50px;
-  margin-bottom: 10px;
-}
-
-.advantage h3 {
-  margin-bottom: 10px;
-}
-
-/* How it Works */
-.how-it-works {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.steps {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
-}
-
-.step h3 {
-  font-size: 2.5rem;
-  color: #1e3a5f;
-  margin-bottom: 10px;
-}
-
-/* Footer */
-.footer {
-  background-color: #0b2239;
-  color: #ffffff;
-  padding: 30px 0;
-  text-align: center;
-}
-
-.footer-nav {
-  margin-top: 10px;
-}
-
-.footer-nav a {
-  color: #d4af37;
-  margin: 0 10px;
-}
-
-/* Changement du header au scroll */
-.header.scrolled {
-  background-color: #0b2239cc; /* Fond un peu transparent au scroll */
-  transition: background 0.3s ease;
-}
-
-/* Terrain Detail Page */
+/* ================================
+   07 - Détails d'un terrain
+================================ */
 .terrain-detail {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 40px;
-  align-items: flex-start;
+  padding: 60px 0;
 }
 
-.terrain-detail-image {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  object-fit: cover;
+.terrain-detail .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.terrain-detail-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.terrain-detail-info h2 {
+.terrain-detail h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
   color: #1e3a5f;
 }
 
-.terrain-detail-info p {
-  font-size: 1.1rem;
+.terrain-detail p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #555;
 }
 
-/* Blog Articles */
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ================================
+   08 - Formulaire dépôt d'annonce
+================================ */
+/* Ajoutez ici les styles spécifiques au formulaire de dépôt d'annonce */
+
+/* ================================
+   09 - Blog
+================================ */
 .blog-articles {
   display: flex;
   flex-wrap: wrap;
@@ -355,66 +315,22 @@ btn-link:hover {
   text-decoration: underline;
 }
 
-// Script pour gérer le formulaire de contact
+/* ================================
+   10 - Animation au scroll (header)
+================================ */
+.header.scrolled {
+  background-color: #0b2239cc;
+  transition: background 0.3s ease;
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contactForm');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Bloquer l'envoi classique
-
-    // Simulation d'envoi réussi
-    alert("Merci pour votre message ! Nous vous répondrons rapidement.");
-
-    // Optionnel : Réinitialiser le formulaire après envoi
-    form.reset();
-  });
-});
-
-/* ==================================
+/* ================================
    11 - Admin
-================================== */
+================================ */
+/* Ajoutez ici les styles spécifiques à l'administration */
 
-
-/* Admin Dashboard */
-.admin-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.admin-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  flex: 1;
-  min-width: 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.admin-card h3 {
-  font-size: 1.4rem;
-  color: #1e3a5f;
-}
-
-.admin-card p {
-  font-size: 1rem;
-}
-
-.admin-card a {
-  margin-top: auto;
-  align-self: flex-start;
-}
-
-/* ==================================
-   12 - A propos
-================================== */
-
-/* À propos */
+/* ================================
+   12 - À propos
+================================ */
 .about-section {
   margin-top: 30px;
   display: flex;
@@ -424,14 +340,14 @@ document.addEventListener('DOMContentLoaded', function () {
   line-height: 1.8;
   color: #333;
 }
-/* ==================================
-   13 - Image Hero
-================================== */
 
+/* ================================
+   13 - Image Hero
+================================ */
 .hero-wrapper {
   position: relative;
   width: 100%;
-  height: 150px; 
+  height: 80vh;
   overflow: hidden;
 }
 
@@ -447,157 +363,41 @@ document.addEventListener('DOMContentLoaded', function () {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px; /* Hauteur du dégradé */
+  height: 100px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
 }
 
-  .hero-wrapper:hover .hero-image {
+.hero-wrapper:hover .hero-image {
   transform: scale(1.05);
   transition: transform 0.5s ease;
 }
 
-.btn-primary {
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #345b87; /* Changement de couleur */
-  transform: scale(1.05);     /* Zoom léger */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
-}
-
-/* ==================================
+/* ================================
    14 - Logo
-================================== */
-  
+================================ */
 .logo {
-  height: 70px; /* Augmente la hauteur ici */
+  height: 70px;
   width: auto;
-  
-/* ==================================
-   15 - Admin
-================================== */
-
-  .admin-dashboard {
-  padding: 40px 0;
-  text-align: center;
 }
 
-.admin-dashboard h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
+/* ================================
+   15 - Page Admin
+================================ */
+/* Ajoutez ici les styles spécifiques à la page admin */
 
-.admin-section {
-  margin-bottom: 40px;
-  text-align: center; /* Centrer le contenu dans chaque section */
-}
+/* ================================
+   16 - Center
+================================ */
+/* Ajoutez ici les styles de centrage si nécessaire */
 
-.admin-section h3 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: #1e3a5f;
-}
+/* ================================
+   17 - Page terrain
+================================ */
+/* Ajoutez ici les styles spécifiques à la page terrain */
 
-.admin-section p {
-  margin-bottom: 15px;
-  font-size: 1rem;
-  color: #333;
-}
-
-.admin-section a.btn-primary {
-  display: inline-block; /* Important : transformer le lien en "bloc" */
-  margin-top: 10px;
-  padding: 10px 25px;
-  text-align: center;
-}
-
-  .admin-dashboard .container {
-  max-width: 700px;
-  margin: 0 auto; /* Centre le bloc */
-  padding: 20px;
-  text-align: center; /* Centre tout le texte et boutons */
-}
-
-.admin-section {
-  margin-bottom: 40px;
-}
-
-.admin-section h3 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: #1e3a5f;
-}
-
-.admin-section p {
-  margin-bottom: 15px;
-  font-size: 1rem;
-  color: #333;
-}
-
-.admin-section a.btn-primary {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 25px;
-  text-align: center;
-}
-
-  .admin-section {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.admin-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-  .featured-terrains .container,
-.why-choose .container,
-.how-it-works .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.why-choose, .how-it-works {
-  text-align: center;
-}
-.terrain-detail {
-  padding: 60px 0;
-}
-
-.terrain-detail .container {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.terrain-detail h1 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #1e3a5f;
-}
-
-.terrain-detail p {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #555;
-}
-
-#map {
-  width: 100%;
-  height: 400px;
-  margin-top: 30px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+/* ================================
+   18 - Retour terrain
+================================ */
 .retour-terrain {
   margin-top: 30px;
   text-align: center;
@@ -617,20 +417,12 @@ document.addEventListener('DOMContentLoaded', function () {
 .retour-terrain .btn-primary:hover {
   background-color: #345b87;
 }
-/* Structure pour que le footer reste en bas */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
-/* Pousse le footer tout en bas si nécessaire */
+/* ================================
+   19 - Footer
+================================ */
 footer.footer {
   margin-top: auto;
-}
-
-/* Style du footer */
-.footer {
   background-color: #f8f8f8;
   padding: 20px 0;
   text-align: center;
@@ -644,28 +436,6 @@ footer.footer {
 
 .footer nav a {
   color: #1e3a5f;
-  text-decoration: none;
-  margin: 0 10px;
-}
 
-.footer nav a:hover {
-  text-decoration: underline;
-}
-
-/* Réseaux sociaux */
-.social-links {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.social-icon {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.2);
-}
+::contentReference[oaicite:3]{index=3}
+ 
