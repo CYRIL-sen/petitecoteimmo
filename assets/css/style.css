@@ -511,7 +511,13 @@ a {
     width: 100%;
   }
 }
-
+.filters select:hover,
+.filters input:hover,
+.filters button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
 /* Terrain Cards amélioré */
 .terrain-cards {
   display: flex;
