@@ -54,13 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
       adminAnnonces.appendChild(div);
 
       ajoutForm.reset();
-      alert('Annonce ajoutée (simulation)');
+    afficherConfirmation('Annonce ajoutée avec succès !');
     });
   }
 
   // Fonction de suppression simulée
   window.supprimerAnnonce = function(index) {
-    alert('Suppression simulée pour l\'annonce #' + (index + 1));
+   afficherConfirmation('Annonce supprimée avec succès !');
     // Ici, en réalité, on devrait re-générer l'affichage sans l'annonce supprimée
     // Mais la suppression directe du fichier JSON nécessite un vrai serveur backend
   };
