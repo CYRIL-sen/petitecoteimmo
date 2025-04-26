@@ -422,9 +422,25 @@ document.addEventListener('DOMContentLoaded', function () {
    13 - Image Hero
 ================================== */
 
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px; /* ou 400px selon ton choix */
+  overflow: hidden;
+}
+
 .hero-image {
   width: 100%;
-  height: 300px; /* Ajuste ici la hauteur */
+  height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Hauteur du dégradé */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
 }
