@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des Annonces - Petite Côte Immo Admin</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Admin Header -->
+  <header class="header">
+    <div class="container header-container">
+      <h1 style="color: white;">Gestion des Annonces</h1>
+    </div>
+  </header>
+
+  <section class="featured-terrains">
+    <div class="container">
+      <h2>Annonces existantes</h2>
+
+      <div id="adminAnnonces" class="admin-actions">
+        <!-- Les annonces s'afficheront ici -->
+      </div>
+
+      <h2>Ajouter une nouvelle annonce</h2>
+
+      <form id="ajoutAnnonceForm" class="deposer-form">
+
+        <div class="form-group">
+          <label for="titre">Titre du terrain</label>
+          <input type="text" id="titre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="localisation">Localisation</label>
+          <input type="text" id="localisation" required>
+        </div>
+
+        <div class="form-group">
+          <label for="superficie">Superficie (m²)</label>
+          <input type="number" id="superficie" required>
+        </div>
+
+        <div class="form-group">
+          <label for="prix">Prix (€)</label>
+          <input type="number" id="prix" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Ajouter l'annonce</button>
+
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Petite Côte Immo - Admin</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/admin.js"></script>
+
+</body>
+</html>
 
