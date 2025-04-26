@@ -63,13 +63,12 @@ a {
 }
 
 /* Conteneur Header */
-.header-container {
+.header {
+  background-color: #0b2239;
+  padding: 10px 0; /* Réduction du padding */
+  min-height: 80px; /* Assure une hauteur minimale propre */
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 /* Liens de navigation */
