@@ -14,6 +14,7 @@
 08 - Réseaux sociaux
 09 - Effets divers
 10 - Responsive Mobile
+11 - Filtres Terrains
 */
 
 /* 01 - Reset général */
@@ -428,4 +429,121 @@ a {
   .nav-links {
     display: flex !important;
   }
+}
+
+
+/* Ajout du style pour terrains.html - Filtres et cartes */
+
+/* Section Filtres */
+.search-filters {
+  background: #ffffff;
+  padding: 30px 20px;
+  margin-top: -60px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filters-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.filters-form select,
+.filters-form input {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  min-width: 180px;
+  flex: 1 1 180px;
+}
+
+.filters-form button {
+  padding: 12px 25px;
+  background-color: #d4af37;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1 1 180px;
+}
+
+.filters-form button:hover {
+  background-color: #c29d2e;
+  transform: scale(1.05);
+}
+
+/* Responsive filtres */
+@media (max-width: 768px) {
+  .filters-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters-form select,
+  .filters-form input,
+  .filters-form button {
+    width: 100%;
+  }
+}
+
+/* Terrain Cards amélioré */
+.terrain-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.terrain-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 280px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.terrain-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.terrain-card h3 {
+  margin: 15px 0 5px 0;
+  font-size: 1.2rem;
+  color: #1e3a5f;
+}
+
+.terrain-card p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.terrain-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-link {
+  color: #d4af37;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
 }
