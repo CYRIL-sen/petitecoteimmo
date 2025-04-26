@@ -1,4 +1,4 @@
-/*
+/* 
 ==================================
 =        PETITE CÔTE IMMO        =
 =         Style principal        =
@@ -6,19 +6,13 @@
 
 01 - Reset général
 02 - Structure générale (Container, Header, Footer)
-03 - Hero section
-04 - Formulaire de recherche
-05 - Liste des terrains
-06 - Détails d'un terrain (terrain.html)
-07 - Formulaire dépôt d'annonce (deposer.html)
-08 - Blog (blog.html)
-09 - Page contact (contact.html)
-10 - Animation au scroll (header)
-11 - Admin
-12 - A propos
-13 - Footer
-14 - Réseaux sociaux
-15 - How it works Encadré
+03 - Hero section avec Formulaire
+04 - Listes Terrains
+05 - Section Pourquoi Nous
+06 - Section Comment ça marche
+07 - Footer
+08 - Réseaux sociaux
+09 - Effets divers
 */
 
 /* 01 - Reset général */
@@ -49,29 +43,29 @@ a {
   padding: 0 20px;
 }
 
-/* 03 - Header */
 /* Header */
 .header {
   background-color: #0b2239;
-  padding: 12px 0; /* Réduit la hauteur de la bande */
-}
-
-/* Logo */
-.logo {
-  height: 80px; /* Taille adaptée pour le logo : reste bien visible sans être énorme */
-  width: auto;
-}
-
-/* Conteneur Header */
-.header {
-  background-color: #0b2239;
-  padding: 10px 0; /* Réduction du padding */
-  min-height: 80px; /* Assure une hauteur minimale propre */
+  padding: 10px 0;
+  min-height: 80px;
   display: flex;
   align-items: center;
 }
 
-/* Liens de navigation */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -80,22 +74,21 @@ a {
 
 .nav-links a {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #d4af37; /* Survol doré */
+  color: #d4af37;
 }
 
-/* Effet au scroll */
 .header.scrolled {
-  background-color: rgba(11, 34, 57, 0.95); /* Légère transparence au scroll */
+  background-color: rgba(11, 34, 57, 0.95);
   transition: background 0.3s ease;
 }
 
-/* 04 - Hero Section */
+/* 03 - Hero Section avec Formulaire */
 .hero {
   position: relative;
   width: 100%;
@@ -113,11 +106,6 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.hero-wrapper:hover .hero-image {
-  transform: scale(1.05);
 }
 
 .hero-overlay {
@@ -126,14 +114,14 @@ a {
   left: 0;
   width: 100%;
   height: 120px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 100%);
 }
 
 .hero-content {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #ffffff;
 }
@@ -145,21 +133,21 @@ a {
 
 .btn-primary {
   background-color: #1e3a5f;
-  color: #ffffff;
+  color: white;
   padding: 12px 30px;
   border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn-primary:hover {
   background-color: #345b87;
   transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* 05 - Formulaire de recherche dans Hero */
 .hero-search-form {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255,255,255,0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 20px 30px;
@@ -168,9 +156,9 @@ a {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  flex-wrap: nowrap; /* plus de retour à la ligne */
+  flex-wrap: nowrap;
   margin-top: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
@@ -184,8 +172,7 @@ a {
   font-size: 1rem;
   border: none;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.8);
-  color: #333;
+  background: rgba(255,255,255,0.8);
   min-width: 180px;
 }
 
@@ -202,15 +189,16 @@ a {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
   min-width: 150px;
+  transition: all 0.3s ease;
 }
 
 .hero-search-form button:hover {
   background-color: #c29d2e;
   transform: scale(1.05);
 }
-/* 06 - Liste des terrains */
+
+/* 04 - Listes Terrains */
 .featured-terrains {
   padding: 60px 20px;
   text-align: center;
@@ -227,7 +215,7 @@ a {
 .terrain-card {
   background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 300px;
 }
 
@@ -246,7 +234,7 @@ a {
   text-decoration: underline;
 }
 
-/* Pourquoi choisir - Bloc moderne */
+/* 05 - Section Pourquoi Nous */
 .why-choose-us {
   background: #ffffff;
   padding: 60px 20px;
@@ -255,19 +243,13 @@ a {
 }
 
 .advantages-wrapper {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255,255,255,0.8);
   border-radius: 20px;
   padding: 50px 40px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   max-width: 1100px;
   width: 100%;
   text-align: center;
-}
-
-.advantages-wrapper h2 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-  color: #1e3a5f;
 }
 
 .advantages {
@@ -292,7 +274,6 @@ a {
 
 .advantage h3 {
   font-size: 1.2rem;
-  font-weight: bold;
   color: #1e3a5f;
 }
 
@@ -301,14 +282,7 @@ a {
   color: #555;
 }
 
-/* Icone principale centrée */
-.main-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 30px;
-}
-
-/* 07 - How It Works Encadré */
+/* 06 - Section Comment ça marche */
 .how-it-works {
   background: #ffffff;
   padding: 60px 20px;
@@ -321,12 +295,20 @@ a {
   margin-top: 30px;
 }
 
+.step-box {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
 .step h3 {
   font-size: 2.5rem;
   color: #1e3a5f;
 }
 
-/* 08 - Footer */
+/* 07 - Footer */
 .footer {
   background-color: #0b2239;
   color: #ffffff;
@@ -348,7 +330,7 @@ a {
   text-decoration: underline;
 }
 
-/* 09 - Réseaux sociaux */
+/* 08 - Réseaux sociaux */
 .social-links {
   margin-top: 20px;
   display: flex;
@@ -364,4 +346,16 @@ a {
 
 .social-icon:hover {
   transform: scale(1.2);
+}
+
+/* 09 - Effets divers */
+.hero-wrapper:hover .hero-image {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+.btn-primary:hover {
+  background-color: #345b87;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
