@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 .hero-image {
   width: 100%;
-  height: 500px; /* Ajuste ici la hauteur */
+  height: 300px; /* Ajuste ici la hauteur */
   object-fit: cover;
   object-position: center;
 }
