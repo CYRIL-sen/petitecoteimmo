@@ -1,1 +1,15 @@
+{
+  "articles": [
+    {
+      "titre": "Pourquoi investir à Popenguine en 2025 ?",
+      "extrait": "Découvrez pourquoi Popenguine est la nouvelle destination phare pour l'immobilier résidentiel...",
+      "image": "assets/images/terrains/terrain1.jpg"
+    },
+    {
+      "titre": "5 astuces pour réussir l'achat de votre terrain au Sénégal",
+      "extrait": "Suivez nos conseils pratiques pour éviter les pièges et sécuriser votre acquisition foncière...",
+      "image": "assets/images/terrains/terrain2.jpg"
+    }
+  ]
+}
 
