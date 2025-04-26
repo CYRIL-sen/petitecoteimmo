@@ -1,1 +1,12 @@
-
+{
+  "annonces": [
+    {
+      "titre": "Terrain résidentiel",
+      "localisation": "Toubab Dialaw",
+      "superficie": 4500,
+      "prix": 75000,
+      "latitude": 14.745,
+      "longitude": -17.475
+    }
+  ]
+}
