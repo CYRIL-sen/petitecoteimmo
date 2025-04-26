@@ -16,6 +16,7 @@
 10 - Responsive Mobile
 11 - Filtres Terrains
 12 - Page-Titre
+13 - Média
 */
 
 /* 01 - Reset général */
@@ -563,4 +564,23 @@ a {
   font-size: 2.5rem;
   color: #1e3a5f;
   margin-bottom: 0;
+}
+
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .filters select,
+  .filters input,
+  .filters button {
+    width: 100%;
+    max-width: 300px; /* Limite pour éviter que ça soit énorme */
+    margin: 8px 0;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
 }
