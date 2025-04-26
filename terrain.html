@@ -8,38 +8,39 @@
 </head>
 <body>
 
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html">
-        <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
-      </a>
-      <nav>
-        <a href="index.html">Accueil</a>
-        <a href="terrains.html">Terrains</a>
-        <a href="deposer.html">Déposer</a>
-        <a href="blog.html">Blog</a>
-        <a href="a-propos.html">À propos</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="header">
+  <div class="container header-container">
+    <a href="index.html">
+      <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="terrains.html">Terrains</a></li>
+        <li><a href="deposer.html">Déposer</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="terrain-detail">
+  <div class="container">
+    <h1 id="titreTerrain"></h1>
+    <p id="localisationTerrain"></p>
+    <p id="superficieTerrain"></p>
+    <p id="prixTerrain"></p>
+
+    <!-- Carte Google Map -->
+    <div id="map"></div>
+
+    <div class="retour-terrain">
+      <a href="terrains.html" class="btn-primary">Retour aux terrains</a>
     </div>
-  </header>
-
-  <section class="terrain-detail">
-    <div class="container">
-      <h1 id="titreTerrain"></h1>
-      <p id="localisationTerrain"></p>
-      <p id="superficieTerrain"></p>
-      <p id="prixTerrain"></p>
-
-      <!-- Carte Google Map -->
-      <div id="map" style="height: 400px; margin-top: 20px;"></div>
-
-      <!-- Bouton Retour aux Terrains -->
-      <div class="retour-terrain">
-        <a href="terrains.html" class="btn-primary">← Retour aux Terrains</a>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
@@ -63,12 +64,8 @@
   </div>
 </footer>
 
-  <script src="assets/js/terrain.js"></script>
-
-  <!-- Clé API Google Maps -->
-  <script async
-    src="https://maps.googleapis.com/maps/api/js?key=TA_CLE_API_ICI&callback=initMap">
-  </script>
+<script src="assets/js/terrain.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=TA_CLE_API_ICI&callback=initMap"></script>
 
 </body>
 </html>
