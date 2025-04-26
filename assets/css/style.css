@@ -21,6 +21,7 @@
 15 - Effets Hover filtres
 16 - Animation Douce Formulaires
 17 - Optimisation Responsive Mobile Ultra Doux
+18 - Bonus - Style avancé des cartes terrains Mobile
 */
 
 /* 01 - Reset général */
@@ -688,4 +689,37 @@ a {
     padding: 20px 0;
     font-size: 0.9rem;
   }
+}
+
+/* 18 - Bonus - Style avancé des cartes terrains Mobile */
+@media (max-width: 768px) {
+
+  .terrain-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .terrain-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  .terrain-card h3,
+  .terrain-card p {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .terrain-card img {
+    border-bottom: 1px solid #eee;
+  }
+
+  .btn-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
 }
