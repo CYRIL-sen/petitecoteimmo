@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function () {
 .hero-wrapper {
   position: relative;
   width: 100%;
-  height: 350px; /* ou 400px selon ton choix */
+  height: 250px; 
   overflow: hidden;
 }
 
