@@ -4,15 +4,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const adminAnnonces = document.getElementById('adminAnnonces');
   const ajoutForm = document.getElementById('ajoutAnnonceForm');
 
-  // Charger les annonces existantes
-  fetch('annonces.json')
-    .then(response => response.json())
-    .then(data => {
-      afficherAnnonces(data.annonces);
-    })
-    .catch(error => {
-      console.error('Erreur chargement annonces :', error);
-    });
+  if (adminAnnonces) {
+    // Charger les annonces existantes
+    fetch('../admin/annonces.json')
+      .then(response => response.json())
+      .then(data => {
+        afficherAnnonces(data.annonces);
+      })
+      .catch(error => {
+        console.error('Erreur chargement annonces :', error);
+      });
+  }
 
   function afficherAnnonces(annonces) {
     adminAnnonces.innerHTML = '';
@@ -21,45 +23,45 @@ document.addEventListener('DOMContentLoaded', function () {
       div.classList.add('admin-card');
       div.innerHTML = `
         <h3>${annonce.titre}</h3>
-        <p>Localisation : ${annonce.localisation}</p>
-        <p>Superficie : ${annonce.superficie} m²</p>
-        <p>Prix : ${annonce.prix} €</p>
-        <button onclick="supprimerAnnonce(${index})" class="btn-secondary">Supprimer</button>
+        <p><strong>Localisation :</strong> ${annonce.localisation}</p>
+        <p><strong>Superficie :</strong> ${annonce.superficie} m²</p>
+        <p><strong>Prix :</strong> ${annonce.prix} €</p>
+        <button onclick="supprimerAnnonce(${index})" class="btn-secondary" style="margin-top:10px;">Supprimer</button>
       `;
       adminAnnonces.appendChild(div);
     });
   }
 
-  // Ajouter une nouvelle annonce (simulation côté client)
-  ajoutForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+  if (ajoutForm) {
+    ajoutForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    const nouvelleAnnonce = {
-      titre: document.getElementById('titre').value,
-      localisation: document.getElementById('localisation').value,
-      superficie: parseInt(document.getElementById('superficie').value),
-      prix: parseInt(document.getElementById('prix').value)
-    };
+      const nouvelleAnnonce = {
+        titre: document.getElementById('titre').value,
+        localisation: document.getElementById('localisation').value,
+        superficie: parseInt(document.getElementById('superficie').value),
+        prix: parseInt(document.getElementById('prix').value)
+      };
 
-    // Ajouter l'annonce directement à l'affichage
-    const div = document.createElement('div');
-    div.classList.add('admin-card');
-    div.innerHTML = `
-      <h3>${nouvelleAnnonce.titre}</h3>
-      <p>Localisation : ${nouvelleAnnonce.localisation}</p>
-      <p>Superficie : ${nouvelleAnnonce.superficie} m²</p>
-      <p>Prix : ${nouvelleAnnonce.prix} €</p>
-    `;
-    adminAnnonces.appendChild(div);
+      const div = document.createElement('div');
+      div.classList.add('admin-card');
+      div.innerHTML = `
+        <h3>${nouvelleAnnonce.titre}</h3>
+        <p><strong>Localisation :</strong> ${nouvelleAnnonce.localisation}</p>
+        <p><strong>Superficie :</strong> ${nouvelleAnnonce.superficie} m²</p>
+        <p><strong>Prix :</strong> ${nouvelleAnnonce.prix} €</p>
+      `;
+      adminAnnonces.appendChild(div);
 
-    // Reset formulaire
-    ajoutForm.reset();
-    alert('Annonce ajoutée (simulation)');
-  });
+      ajoutForm.reset();
+      alert('Annonce ajoutée (simulation)');
+    });
+  }
 
-  // Supprimer une annonce (simulation)
+  // Fonction de suppression simulée
   window.supprimerAnnonce = function(index) {
     alert('Suppression simulée pour l\'annonce #' + (index + 1));
-    // Ici on ne modifie pas encore réellement le fichier JSON
+    // Ici, en réalité, on devrait re-générer l'affichage sans l'annonce supprimée
+    // Mais la suppression directe du fichier JSON nécessite un vrai serveur backend
   };
 });
