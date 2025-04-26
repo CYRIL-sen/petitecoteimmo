@@ -232,6 +232,68 @@ a {
   text-decoration: underline;
 }
 
+/* Pourquoi choisir - Bloc moderne */
+.why-choose-us {
+  background: #ffffff;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.advantages-wrapper {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+.advantages-wrapper h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #1e3a5f;
+}
+
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.advantage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  gap: 15px;
+}
+
+.advantage img {
+  width: 48px;
+  height: 48px;
+}
+
+.advantage h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1e3a5f;
+}
+
+.advantage p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Icone principale centrée */
+.main-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 30px;
+}
+
 /* 07 - How It Works Encadré */
 .how-it-works {
   background: #ffffff;
