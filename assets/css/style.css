@@ -444,3 +444,8 @@ document.addEventListener('DOMContentLoaded', function () {
   height: 100px; /* Hauteur du dégradé */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
 }
+
+  .hero-wrapper:hover .hero-image {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
