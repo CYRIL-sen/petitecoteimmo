@@ -743,3 +743,121 @@ a {
     align-items: center;
   }
 }
+/* ===== Version Ultra-Compacte Responsive Mobile ===== */
+@media (max-width: 768px) {
+
+  /* Réduction générale */
+  body {
+    padding: 0 8px;
+  }
+
+  /* Header + Navbar */
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+    background: #0b2239;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+
+  /* Hero Content */
+  .hero-content h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  /* Formulaire de recherche */
+  .hero-search-form {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 12px;
+  }
+
+  .hero-search-form select,
+  .hero-search-form input,
+  .hero-search-form button {
+    width: 100%;
+    max-width: 260px;
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+
+  /* Cartes de terrains */
+  .terrain-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .terrain-card {
+    width: 90%;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .terrain-card img {
+    height: 160px;
+  }
+
+  .terrain-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+  }
+
+  .terrain-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Filtres Terrains */
+  .filters-form {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .filters-form select,
+  .filters-form input,
+  .filters-form button {
+    width: 100%;
+    max-width: 280px;
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+
+  .filters-form button {
+    font-weight: bold;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 20px 0;
+    font-size: 0.85rem;
+  }
+
+  .footer nav {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .social-links {
+    margin-top: 15px;
+    gap: 15px;
+  }
+}
