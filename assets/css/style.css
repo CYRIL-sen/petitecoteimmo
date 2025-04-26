@@ -327,3 +327,19 @@ btn-link:hover {
 .blog-article a:hover {
   text-decoration: underline;
 }
+
+// Script pour gérer le formulaire de contact
+
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Bloquer l'envoi classique
+
+    // Simulation d'envoi réussi
+    alert("Merci pour votre message ! Nous vous répondrons rapidement.");
+
+    // Optionnel : Réinitialiser le formulaire après envoi
+    form.reset();
+  });
+});
