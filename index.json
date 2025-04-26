@@ -1,1 +1,12 @@
+{
+  "site": "Petite Côte Immo",
+  "description": "Votre plateforme pour trouver et vendre des terrains sur la Petite Côte.",
+  "url": "https://petitecoteimmo.com",
+  "contact_email": "contact@petitecoteimmo.com",
+  "social": {
+    "facebook": "https://facebook.com/petitecoteimmo",
+    "instagram": "https://instagram.com/petitecoteimmo"
+  },
+  "categories": ["Terrains", "Immobilier", "Investissement", "Afrique de l'Ouest"]
+}
 
