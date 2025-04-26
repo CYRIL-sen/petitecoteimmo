@@ -17,6 +17,10 @@
 11 - Filtres Terrains
 12 - Page-Titre
 13 - Média
+14 - Optimisation Mobile filtres
+15 - Effets Hover filtres
+16 - Animation Douce Formulaires
+17 - Optimisation Responsive Mobile Ultra Doux
 */
 
 /* 01 - Reset général */
@@ -621,4 +625,67 @@ a {
 .filters input,
 .filters button {
   transition: all 0.3s ease;
+}
+
+/* 17 - Optimisation Responsive Mobile Ultra Doux */
+@media (max-width: 768px) {
+  
+  /* Ajuste l'espacement général */
+  body {
+    padding: 0 10px;
+  }
+
+  /* Hero content */
+  .hero-content h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .hero-search-form {
+    gap: 12px;
+    padding: 15px 20px;
+  }
+
+  .hero-search-form select,
+  .hero-search-form input,
+  .hero-search-form button {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+
+  /* Titres sections */
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Cartes terrains */
+  .terrain-card {
+    width: 95%;
+    margin-bottom: 20px;
+  }
+
+  .terrain-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .terrain-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Filtres */
+  .filters-form {
+    gap: 10px;
+  }
+
+  .filters-form select,
+  .filters-form input,
+  .filters-form button {
+    max-width: 280px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 20px 0;
+    font-size: 0.9rem;
+  }
 }
