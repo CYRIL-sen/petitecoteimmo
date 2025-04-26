@@ -1,4 +1,4 @@
-/* 
+/*
 ==================================
 =        PETITE CÔTE IMMO        =
 =         Style principal        =
@@ -15,19 +15,13 @@
 09 - Page contact (contact.html)
 10 - Animation au scroll (header)
 11 - Admin
-12 - À propos
-13 - Image Hero
-14 - Logo
-15 - Page Admin
-16 - Center
-17 - Page terrain
-18 - Retour terrain
-19 - Footer
+12 - A propos
+13 - Footer
+14 - Réseaux sociaux
+15 - How it works Encadré
 */
 
-/* ================================
-   01 - Reset général
-================================ */
+/* 01 - Reset général */
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +31,6 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #1a1a1a;
-  line-height: 1.6;
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
@@ -49,64 +42,14 @@ a {
   color: inherit;
 }
 
-/* ================================
-   02 - Structure générale
-================================ */
+/* 02 - Structure générale */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.why-choose-us {
-  background: #ffffff;
-  padding: 40px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 900px;
-  margin: 60px auto;
-  text-align: center;
-}
-
-.advantages {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-.advantage {
-  flex: 1 1 200px;
-  background: #f8f8f8;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.advantage:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.advantage img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-.advantage h3 {
-  margin: 10px 0 5px;
-  font-size: 1.2rem;
-}
-
-.advantage p {
-  font-size: 1rem;
-  color: #555;
-}
-/* ================================
-   03 - Header
-================================ */
+/* 03 - Header */
 .header {
   background-color: #0b2239;
   padding: 20px 0;
@@ -119,8 +62,7 @@ a {
 }
 
 .logo {
-  height: 70px;
-  width: auto;
+  height: 60px;
 }
 
 .nav-links {
@@ -134,21 +76,38 @@ a {
   font-weight: bold;
 }
 
-/* ================================
-   04 - Hero Section
-================================ */
+.header.scrolled {
+  background-color: #0b2239cc;
+  transition: background 0.3s ease;
+}
+
+/* 04 - Hero Section */
 .hero {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   overflow: hidden;
+}
+
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(70%);
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
 }
 
 .hero-content {
@@ -180,23 +139,15 @@ a {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ================================
-   05 - Formulaire de recherche
-================================ */
+/* 05 - Formulaire de recherche */
 .search-form {
-  margin-top: 30px;
-  background: rgba(255, 255, 255, 0.9); /* Fond blanc légèrement transparent */
+  background: #ffffff;
+  margin-top: -50px;
   padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.search-form form {
-  display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
@@ -221,9 +172,7 @@ a {
   background-color: #c29d2e;
 }
 
-/* ================================
-   06 - Liste des terrains
-================================ */
+/* 06 - Liste des terrains */
 .featured-terrains {
   padding: 60px 20px;
   text-align: center;
@@ -242,7 +191,6 @@ a {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
-  overflow: hidden;
 }
 
 .terrain-card img {
@@ -251,235 +199,48 @@ a {
   object-fit: cover;
 }
 
-.terrain-card h3 {
-  margin: 15px 0 5px;
-}
-
-.terrain-card p {
-  margin-bottom: 15px;
-}
-
 .btn-link {
-  display: inline-block;
-  margin-bottom: 15px;
   color: #d4af37;
   font-weight: bold;
 }
 
 .btn-link:hover {
-  color: #c29d2e;
   text-decoration: underline;
-  transform: scale(1.05);
-  transition: all 0.3s ease;
 }
 
-/* ================================
-   07 - Détails d'un terrain
-================================ */
-.terrain-detail {
-  padding: 60px 0;
+/* 07 - How It Works Encadré */
+.how-it-works {
+  background: #ffffff;
+  padding: 60px 20px;
 }
 
-.terrain-detail .container {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.terrain-detail h1 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #1e3a5f;
-}
-
-.terrain-detail p {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #555;
-}
-
-#map {
-  width: 100%;
-  height: 400px;
-  margin-top: 30px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* ================================
-   08 - Formulaire dépôt d'annonce
-================================ */
-/* Ajoutez ici les styles spécifiques au formulaire de dépôt d'annonce */
-
-/* ================================
-   09 - Blog
-================================ */
-.blog-articles {
+.steps {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 40px;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
 }
 
-.blog-article {
-  background-color: #ffffff;
+.step-box {
+  background: #f0f0f0;
   padding: 20px;
   border-radius: 10px;
-  width: 100%;
-  max-width: 350px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  width: 200px;
+  text-align: center;
 }
 
-.blog-article img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.blog-article h2 {
-  font-size: 1.4rem;
+.step h3 {
+  font-size: 2.5rem;
   color: #1e3a5f;
 }
 
-.blog-article p {
-  font-size: 1rem;
-  color: #333;
-}
-
-.blog-article a {
-  color: #d4af37;
-  font-weight: bold;
-  margin-top: auto;
-}
-
-.blog-article a:hover {
-  text-decoration: underline;
-}
-
-/* ================================
-   10 - Animation au scroll (header)
-================================ */
-.header.scrolled {
-  background-color: #0b2239cc;
-  transition: background 0.3s ease;
-}
-
-/* ================================
-   11 - Admin
-================================ */
-/* Ajoutez ici les styles spécifiques à l'administration */
-
-/* ================================
-   12 - À propos
-================================ */
-.about-section {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
-}
-
-/* ================================
-   13 - Image Hero
-================================ */
-.hero-wrapper {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  overflow: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.hero-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
-}
-
-.hero-wrapper:hover .hero-image {
-  transform: scale(1.05);
-  transition: transform 0.5s ease;
-}
-
-/* ================================
-   14 - Logo
-================================ */
-.logo {
-  height: 70px;
-  width: auto;
-}
-
-.advantages img {
-  width: 60px; /* Largeur contrôlée */
-  height: auto; /* Garde les proportions */
-  margin-bottom: 10px;
-}
-
-/* ================================
-   15 - Page Admin
-================================ */
-/* Ajoutez ici les styles spécifiques à la page admin */
-
-/* ================================
-   16 - Center
-================================ */
-/* Ajoutez ici les styles de centrage si nécessaire */
-
-/* ================================
-   17 - Page terrain
-================================ */
-/* Ajoutez ici les styles spécifiques à la page terrain */
-
-/* ================================
-   18 - Retour terrain
-================================ */
-.retour-terrain {
-  margin-top: 30px;
+/* 08 - Footer */
+.footer {
+  background-color: #0b2239;
+  color: #ffffff;
+  padding: 30px 0;
   text-align: center;
-}
-
-.retour-terrain .btn-primary {
-  display: inline-block;
-  padding: 12px 30px;
-  font-size: 1rem;
-  border-radius: 8px;
-  background-color: #1e3a5f;
-  color: white;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.retour-terrain .btn-primary:hover {
-  background-color: #345b87;
-}
-
-/* ================================
-   19 - Footer
-================================ */
-footer.footer {
   margin-top: auto;
-  background-color: #f8f8f8;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #555;
 }
 
 .footer nav {
@@ -487,7 +248,28 @@ footer.footer {
 }
 
 .footer nav a {
-  color: #1e3a5f;
+  color: #d4af37;
+  margin: 0 10px;
+}
 
-::contentReference[oaicite:3]{index=3}
- 
+.footer nav a:hover {
+  text-decoration: underline;
+}
+
+/* 09 - Réseaux sociaux */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
