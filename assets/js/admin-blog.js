@@ -51,14 +51,23 @@ document.addEventListener('DOMContentLoaded', function () {
       adminBlog.appendChild(div);
 
       ajoutArticleForm.reset();
-      alert('Article ajouté (simulation)');
+     afficherConfirmation('Article ajoutée avec succès !');
     });
   }
 
   // Fonction de suppression simulée
   window.supprimerArticle = function(index) {
-    alert('Suppression simulée pour l\'article #' + (index + 1));
+  afficherConfirmation('Article supprimée avec succès !');
     // En vrai, il faudrait re-générer l'affichage sans l'article supprimé
   };
 });
 
+function afficherConfirmation(message) {
+  const confirmation = document.getElementById('confirmationMessage');
+  confirmation.textContent = message;
+  confirmation.classList.add('show');
+
+  setTimeout(() => {
+    confirmation.classList.remove('show');
+  }, 3000); // Disparaît après 3 secondes
+}
