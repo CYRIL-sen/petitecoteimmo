@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Détail Terrain - Petite Côte Immo</title>
+  <title>Détail du Terrain - Petite Côte Immo</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+<!-- Header -->
 <header class="header">
   <div class="container header-container">
     <a href="index.html">
       <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
     </a>
-    <nav>
+    <nav class="nav-container">
       <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="terrains.html">Terrains</a></li>
@@ -26,45 +27,60 @@
   </div>
 </header>
 
+<!-- Détail du terrain -->
 <section class="terrain-detail">
   <div class="container">
-    <h1 id="titreTerrain"></h1>
-    <p id="localisationTerrain"></p>
-    <p id="superficieTerrain"></p>
-    <p id="prixTerrain"></p>
+    <h1 id="titreTerrain">Terrain résidentiel à Popenguine</h1>
+
+    <!-- Galerie d'images -->
+    <div class="terrain-gallery">
+      <img src="assets/images/terrains/terrain1.jpg" alt="Terrain Photo 1">
+      <img src="assets/images/terrains/terrain2.jpg" alt="Terrain Photo 2">
+      <img src="assets/images/terrains/terrain3.jpg" alt="Terrain Photo 3">
+      <img src="assets/images/terrains/terrain4.jpg" alt="Terrain Photo 4">
+      <img src="assets/images/terrains/terrain5.jpg" alt="Terrain Photo 5">
+    </div>
+
+    <!-- Informations du terrain -->
+    <div class="terrain-detail-info">
+      <p id="localisationTerrain">📍 Localisation: Popenguine</p>
+      <p id="superficieTerrain">📐 Superficie: 4500 m²</p>
+      <p id="prixTerrain">💰 Prix: 30 000 €</p>
+      <p id="typeTerrain">🏡 Type: Résidentiel</p>
+    </div>
 
     <!-- Carte Google Map -->
-    <div id="map"></div>
+    <div id="map" style="height: 400px; margin-top: 30px; border-radius: 12px;"></div>
 
+    <!-- Bouton retour -->
     <div class="retour-terrain">
-      <a href="terrains.html" class="btn-primary">Retour aux terrains</a>
+      <a href="terrains.html" class="btn-primary">← Retour aux terrains</a>
     </div>
+
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <p>© 2025 Petite Côte Immo</p>
     <nav>
-      <a href="a-propos.html">À propos</a> | 
-      <a href="contact.html">Contact</a> | 
+      <a href="a-propos.html">À propos</a> |
+      <a href="contact.html">Contact</a> |
       <a href="#">Société</a>
     </nav>
     <div class="social-links">
-      <a href="https://instagram.com/toncompte" target="_blank">
-        <img src="assets/images/icons/instagram-icon.svg" alt="Instagram" class="social-icon">
-      </a>
-      <a href="https://facebook.com/toncompte" target="_blank">
-        <img src="assets/images/icons/facebook-icon.svg" alt="Facebook" class="social-icon">
-      </a>
-      <a href="https://linkedin.com/in/toncompte" target="_blank">
-        <img src="assets/images/icons/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
-      </a>
+      <a href="#"><img src="assets/images/icons/instagram-icon.svg" alt="Instagram" class="social-icon"></a>
+      <a href="#"><img src="assets/images/icons/facebook-icon.svg" alt="Facebook" class="social-icon"></a>
+      <a href="#"><img src="assets/images/icons/linkedin-icon.svg" alt="LinkedIn" class="social-icon"></a>
     </div>
   </div>
 </footer>
 
+<!-- JS terrain dynamique -->
 <script src="assets/js/terrain.js"></script>
+
+<!-- API Google Map -->
 <script async src="https://maps.googleapis.com/maps/api/js?key=TA_CLE_API_ICI&callback=initMap"></script>
 
 </body>
