@@ -1,3 +1,21 @@
+/* 
+==================================
+=        PETITE CÔTE IMMO        =
+=         Style principal        =
+==================================
+
+01 - Reset général
+02 - Structure générale (Container, Header, Footer)
+03 - Hero section
+04 - Formulaire de recherche
+05 - Liste des terrains
+06 - Détails d'un terrain (terrain.html)
+07 - Formulaire dépôt d'annonce (deposer.html)
+08 - Blog (blog.html)
+09 - Page contact (contact.html)
+10 - Animation au scroll (header)
+*/
+
 /* Reset de base */
 * {
   margin: 0;
