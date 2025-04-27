@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Espace Personnel - Petite Côte Immo</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/espace.css"> <!-- On va créer un petit CSS spécial pour cette page -->
 </head>
 <body>
 
@@ -17,29 +18,53 @@
       <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="terrains.html">Terrains</a></li>
-        <li><a href="deposer.html">Déposer</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="espace.html" class="active">Espace</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<section class="espace-section">
-  <div class="container">
-    <h1>Connexion à votre espace</h1>
-
-    <form id="loginForm" class="login-form">
-      <input type="email" id="loginEmail" placeholder="Votre email" required>
-      <input type="text" id="loginCode" placeholder="Votre code secret" minlength="8" maxlength="8" pattern="[A-Za-z0-9]{8}" required>
-      <button type="submit" class="btn-primary">Se connecter</button>
-    </form>
-
-    <div id="espaceContent" style="display:none; margin-top: 40px;">
-      <h2>Vos annonces</h2>
-      <div id="annoncesList"></div>
+<section class="espace-wrapper">
+  <div class="espace-container">
+    
+    <div id="connexion-form" class="espace-form">
+      <h2>Connexion</h2>
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Code (8 caractères)" required>
+        <button type="submit" class="btn-primary">Se connecter</button>
+      </form>
+      <div class="espace-links">
+        <a href="#" onclick="showForm('register')">Créer un compte</a> | 
+        <a href="#" onclick="showForm('forgot')">Mot de passe oublié ?</a>
+      </div>
     </div>
+
+    <div id="register-form" class="espace-form hidden">
+      <h2>Créer un compte</h2>
+      <form>
+        <input type="text" placeholder="Nom" required>
+        <input type="text" placeholder="Prénom" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Créer un code (8 caractères)" required>
+        <button type="submit" class="btn-primary">S'inscrire</button>
+      </form>
+      <div class="espace-links">
+        <a href="#" onclick="showForm('login')">Déjà un compte ? Se connecter</a>
+      </div>
+    </div>
+
+    <div id="forgot-form" class="espace-form hidden">
+      <h2>Mot de passe oublié</h2>
+      <form>
+        <input type="email" placeholder="Votre email" required>
+        <button type="submit" class="btn-primary">Réinitialiser le code</button>
+      </form>
+      <div class="espace-links">
+        <a href="#" onclick="showForm('login')">Retour connexion</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -49,8 +74,21 @@
   </div>
 </footer>
 
-<script src="assets/js/espace.js"></script>
+<script>
+function showForm(form) {
+  document.getElementById('connexion-form').classList.add('hidden');
+  document.getElementById('register-form').classList.add('hidden');
+  document.getElementById('forgot-form').classList.add('hidden');
+
+  if (form === 'login') {
+    document.getElementById('connexion-form').classList.remove('hidden');
+  } else if (form === 'register') {
+    document.getElementById('register-form').classList.remove('hidden');
+  } else if (form === 'forgot') {
+    document.getElementById('forgot-form').classList.remove('hidden');
+  }
+}
+</script>
 
 </body>
 </html>
-
