@@ -1,45 +1,76 @@
-// espace.js
+// assets/js/espace.js
 
-document.addEventListener("DOMContentLoaded", () => {
+// Vérifie si un utilisateur est déjà connecté
+if (localStorage.getItem('userConnected')) {
+  window.location.href = 'espace.html';
+}
 
-  const connexionForm = document.getElementById("connexionForm");
-  const inscriptionForm = document.getElementById("inscriptionForm");
-  const motDePasseForm = document.getElementById("motDePasseForm");
+// Enregistrement d'un nouvel utilisateur
+function enregistrerCompte(email, code) {
+  const utilisateurs = JSON.parse(localStorage.getItem('utilisateurs') || '{}');
+  utilisateurs[email] = { code };
+  localStorage.setItem('utilisateurs', JSON.stringify(utilisateurs));
+}
 
-  const switchToInscription = document.getElementById("switchToInscription");
-  const switchToConnexion = document.getElementById("switchToConnexion");
-  const switchToMotDePasse = document.getElementById("switchToMotDePasse");
+// Connexion d'un utilisateur
+function connecter(email, code) {
+  const utilisateurs = JSON.parse(localStorage.getItem('utilisateurs') || '{}');
 
-  const retourConnexion = document.getElementById("retourConnexion");
+  if (utilisateurs[email] && utilisateurs[email].code === code) {
+    localStorage.setItem('userConnected', email);
+    window.location.href = 'espace.html';
+  } else {
+    alert('Email ou code incorrect.');
+  }
+}
 
-  // Navigation entre les formulaires
+// Déconnexion
+function deconnecter() {
+  localStorage.removeItem('userConnected');
+  window.location.href = 'connexion.html';
+}
 
-  switchToInscription.addEventListener("click", (e) => {
+// Mot de passe oublié
+function recupererCode(email) {
+  const utilisateurs = JSON.parse(localStorage.getItem('utilisateurs') || '{}');
+
+  if (utilisateurs[email]) {
+    alert(`Votre code est : ${utilisateurs[email].code}`);
+  } else {
+    alert("Aucun compte n'est associé à cet email.");
+  }
+}
+
+// Gestion formulaire connexion
+const formConnexion = document.getElementById('formConnexion');
+if (formConnexion) {
+  formConnexion.addEventListener('submit', (e) => {
     e.preventDefault();
-    connexionForm.classList.add("hidden");
-    inscriptionForm.classList.remove("hidden");
-    motDePasseForm.classList.add("hidden");
+    const email = document.getElementById('emailConnexion').value.trim();
+    const code = document.getElementById('codeConnexion').value.trim();
+    connecter(email, code);
   });
+}
 
-  switchToConnexion.addEventListener("click", (e) => {
+// Gestion formulaire création de compte
+const formCreation = document.getElementById('formCreation');
+if (formCreation) {
+  formCreation.addEventListener('submit', (e) => {
     e.preventDefault();
-    inscriptionForm.classList.add("hidden");
-    connexionForm.classList.remove("hidden");
-    motDePasseForm.classList.add("hidden");
+    const email = document.getElementById('emailCreation').value.trim();
+    const code = document.getElementById('codeCreation').value.trim();
+    enregistrerCompte(email, code);
+    alert('Compte créé avec succès. Connectez-vous maintenant.');
+    window.location.href = 'connexion.html';
   });
+}
 
-  switchToMotDePasse.addEventListener("click", (e) => {
+// Gestion formulaire mot de passe oublié
+const formRecup = document.getElementById('formRecuperation');
+if (formRecup) {
+  formRecup.addEventListener('submit', (e) => {
     e.preventDefault();
-    connexionForm.classList.add("hidden");
-    inscriptionForm.classList.add("hidden");
-    motDePasseForm.classList.remove("hidden");
+    const email = document.getElementById('emailRecuperation').value.trim();
+    recupererCode(email);
   });
-
-  retourConnexion.addEventListener("click", (e) => {
-    e.preventDefault();
-    motDePasseForm.classList.add("hidden");
-    connexionForm.classList.remove("hidden");
-  });
-
-});
-
+}
