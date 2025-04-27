@@ -86,24 +86,33 @@
 <!-- Script Gestion Formulaires -->
 <script>
 function showForm(form) {
-  document.getElementById('connexion-form').style.display = 'none';
-  document.getElementById('register-form').style.display = 'none';
-  document.getElementById('forgot-form').style.display = 'none';
+  const forms = ['connexion-form', 'register-form', 'forgot-form'];
 
-  if (form === 'login') {
-    document.getElementById('connexion-form').style.display = 'block';
-  } else if (form === 'register') {
-    document.getElementById('register-form').style.display = 'block';
-  } else if (form === 'forgot') {
-    document.getElementById('forgot-form').style.display = 'block';
-  }
+  // Cacher tous les formulaires
+  forms.forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove('show');
+    setTimeout(() => {
+      el.style.display = 'none';
+      el.classList.remove('fade');
+    }, 400); // Laisse le temps à l'animation de terminer
+  });
+
+  // Afficher le formulaire choisi avec animation
+  setTimeout(() => {
+    const target = document.getElementById(form + '-form');
+    target.style.display = 'block';
+    target.classList.add('fade');
+    setTimeout(() => target.classList.add('show'), 10);
+  }, 400);
 }
 
-// Par défaut à l'ouverture : afficher uniquement Connexion
+// Au chargement : afficher Connexion
 document.addEventListener('DOMContentLoaded', function() {
   showForm('login');
 });
 </script>
+
 
 </body>
 </html>
