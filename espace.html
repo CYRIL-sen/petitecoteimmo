@@ -2,13 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Espace Personnel - Petite Côte Immo</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/espace.css">
+  <style>
+    .hidden { display: none; }
+  </style>
 </head>
 <body>
 
+<!-- Header -->
 <header class="header">
   <div class="container header-container">
     <a href="index.html">
@@ -24,9 +28,11 @@
   </div>
 </header>
 
+<!-- Espace Utilisateur -->
 <section class="espace-wrapper">
   <div class="espace-container">
-    
+
+    <!-- Formulaire Connexion -->
     <div id="connexion-form" class="espace-form">
       <h2>Connexion</h2>
       <form>
@@ -35,11 +41,12 @@
         <button type="submit" class="btn-primary">Se connecter</button>
       </form>
       <div class="espace-links">
-        <a href="#" onclick="showForm('register')">Créer un compte</a> | 
+        <a href="#" onclick="showForm('register')">Créer un compte</a> |
         <a href="#" onclick="showForm('forgot')">Mot de passe oublié ?</a>
       </div>
     </div>
 
+    <!-- Formulaire Inscription -->
     <div id="register-form" class="espace-form hidden">
       <h2>Créer un compte</h2>
       <form>
@@ -54,6 +61,7 @@
       </div>
     </div>
 
+    <!-- Formulaire Mot de passe oublié -->
     <div id="forgot-form" class="espace-form hidden">
       <h2>Mot de passe oublié</h2>
       <form>
@@ -65,37 +73,36 @@
       </div>
     </div>
 
-    <!-- Bouton Déposer une annonce (apparaîtra après connexion réussie) -->
-    <div id="deposer-annonce" class="espace-actions hidden">
-      <a href="deposer.html" class="btn-primary">Déposer une annonce</a>
-    </div>
-
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <p>© 2025 Petite Côte Immo</p>
   </div>
 </footer>
 
+<!-- Script Gestion Formulaires -->
 <script>
-// Gestion affichage des formulaires
 function showForm(form) {
-  document.getElementById('connexion-form').classList.add('hidden');
-  document.getElementById('register-form').classList.add('hidden');
-  document.getElementById('forgot-form').classList.add('hidden');
+  document.getElementById('connexion-form').style.display = 'none';
+  document.getElementById('register-form').style.display = 'none';
+  document.getElementById('forgot-form').style.display = 'none';
 
   if (form === 'login') {
-    document.getElementById('connexion-form').classList.remove('hidden');
+    document.getElementById('connexion-form').style.display = 'block';
   } else if (form === 'register') {
-    document.getElementById('register-form').classList.remove('hidden');
+    document.getElementById('register-form').style.display = 'block';
   } else if (form === 'forgot') {
-    document.getElementById('forgot-form').classList.remove('hidden');
+    document.getElementById('forgot-form').style.display = 'block';
   }
 }
 
-// Ici plus tard on pourra démasquer #deposer-annonce après connexion
+// Par défaut à l'ouverture : afficher uniquement Connexion
+document.addEventListener('DOMContentLoaded', function() {
+  showForm('login');
+});
 </script>
 
 </body>
