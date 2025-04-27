@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Espace Personnel - Petite Côte Immo</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/espace.css"> <!-- On va créer un petit CSS spécial pour cette page -->
+  <link rel="stylesheet" href="assets/css/espace.css">
 </head>
 <body>
 
@@ -65,6 +65,11 @@
       </div>
     </div>
 
+    <!-- Bouton Déposer une annonce (apparaîtra après connexion réussie) -->
+    <div id="deposer-annonce" class="espace-actions hidden">
+      <a href="deposer.html" class="btn-primary">Déposer une annonce</a>
+    </div>
+
   </div>
 </section>
 
@@ -75,6 +80,7 @@
 </footer>
 
 <script>
+// Gestion affichage des formulaires
 function showForm(form) {
   document.getElementById('connexion-form').classList.add('hidden');
   document.getElementById('register-form').classList.add('hidden');
@@ -88,6 +94,8 @@ function showForm(form) {
     document.getElementById('forgot-form').classList.remove('hidden');
   }
 }
+
+// Ici plus tard on pourra démasquer #deposer-annonce après connexion
 </script>
 
 </body>
