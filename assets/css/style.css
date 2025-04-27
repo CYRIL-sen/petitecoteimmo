@@ -627,7 +627,20 @@ a {
 .filters button {
   transition: all 0.3s ease;
 }
+/* Bouton Connexion dans le menu */
+.btn-login {
+  background-color: #d4af37;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
 
+.btn-login:hover {
+  background-color: #c29d2e;
+  transform: scale(1.05);
+}
 /* 17 - Optimisation Responsive Mobile Ultra Doux */
 @media (max-width: 768px) {
   
