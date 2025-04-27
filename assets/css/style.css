@@ -7,6 +7,7 @@
 01 - Reset général
 02 - Structure générale (Container, Header, Footer)
 03 - Hero section avec Formulaire
+03BIS - Video
 04 - Listes Terrains
 05 - Section Pourquoi Nous
 06 - Section Comment ça marche
@@ -138,6 +139,16 @@ a {
 .hero-content h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
 /* Bouton principal Hero */
