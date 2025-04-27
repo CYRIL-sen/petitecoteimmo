@@ -1,4 +1,4 @@
-/* 
+/*
 ==================================
 =        PETITE CÔTE IMMO        =
 =         Style principal        =
@@ -6,8 +6,7 @@
 
 01 - Reset général
 02 - Structure générale (Container, Header, Footer)
-03 - Hero section avec Formulaire
-03BIS - Video
+03 - Hero section avec Formulaire + Vidéo
 04 - Listes Terrains
 05 - Section Pourquoi Nous
 06 - Section Comment ça marche
@@ -17,12 +16,7 @@
 10 - Responsive Mobile
 11 - Filtres Terrains
 12 - Page-Titre
-13 - Média
-14 - Optimisation Mobile filtres
-15 - Effets Hover filtres
-16 - Animation Douce Formulaires
-17 - Optimisation Responsive Mobile Ultra Doux
-18 - Bonus - Style avancé des cartes terrains Mobile
+13 - Bonus Animations / Optimisations
 */
 
 /* 01 - Reset général */
@@ -46,14 +40,13 @@ a {
   color: inherit;
 }
 
-/* 02 - Structure générale */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Header */
+/* 02 - Header */
 .header {
   background-color: #0b2239;
   padding: 10px 0;
@@ -66,9 +59,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 .logo {
@@ -98,7 +88,7 @@ a {
   transition: background 0.3s ease;
 }
 
-/* 03 - Hero Section avec Formulaire */
+/* 03 - Hero Section avec Vidéo */
 .hero {
   position: relative;
   width: 100%;
@@ -112,10 +102,17 @@ a {
   height: 100%;
 }
 
-.hero-image {
+.hero-image,
+.hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hero-wrapper:hover .hero-image,
+.hero-wrapper:hover .hero-video {
+  transform: scale(1.05);
 }
 
 .hero-overlay {
@@ -134,24 +131,13 @@ a {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #ffffff;
+  z-index: 2;
 }
 
 .hero-content h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
 }
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* Bouton principal Hero */
 
 .btn-primary {
   background-color: #1e3a5f;
@@ -162,10 +148,7 @@ a {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: auto; /* <-- Important */
-  max-width: 90%; /* <-- Limite pour mobile */
-  text-align: center;
-  white-space: nowrap; /* <-- Ne jamais couper sur deux lignes */
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -174,42 +157,33 @@ a {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Adaptation Mobile */
-@media (max-width: 768px) {
-  .btn-primary {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-}
-
 .hero-search-form {
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   padding: 20px 30px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin-top: 30px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  z-index: 5;
 }
 
 .hero-search-form select,
-.hero-search-form input {
+.hero-search-form input,
+.hero-search-form button {
   padding: 12px 18px;
   font-size: 1rem;
   border: none;
   border-radius: 12px;
   background: rgba(255,255,255,0.8);
   min-width: 180px;
+  transition: all 0.3s ease;
 }
 
 .hero-search-form input::placeholder {
@@ -218,20 +192,11 @@ a {
 
 .hero-search-form button {
   background-color: #d4af37;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
   font-weight: bold;
-  cursor: pointer;
-  min-width: 150px;
-  transition: all 0.3s ease;
 }
 
 .hero-search-form button:hover {
   background-color: #c29d2e;
-  transform: scale(1.05);
 }
 
 /* 04 - Listes Terrains */
@@ -242,22 +207,27 @@ a {
 
 .terrain-cards {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  margin-top: 30px;
+  justify-content: center;
 }
 
 .terrain-card {
   background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 280px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.terrain-card:hover {
+  transform: translateY(-5px);
 }
 
 .terrain-card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
@@ -270,53 +240,27 @@ a {
   text-decoration: underline;
 }
 
-/* 05 - Section Pourquoi Nous */
+/* 05 - Pourquoi nous */
 .why-choose-us {
   background: #ffffff;
   padding: 60px 20px;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin: 40px auto;
-  max-width: 1200px;
-}
-
-.main-icon {
-  width: 60px; /* <-- réduit l'icône */
-  margin: 20px auto;
+  border-radius: 20px;
 }
 
 .advantages {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  margin-top: 30px;
-}
-
-.advantage {
-  flex: 1 1 200px;
-  text-align: center;
-  max-width: 250px;
+  flex-wrap: wrap;
 }
 
 .advantage img {
-  width: 60px; /* <-- réduit la taille des petites icônes */
+  width: 60px;
   margin-bottom: 10px;
 }
 
-.advantage h3 {
-  font-size: 1.2rem;
-  color: #0b2239;
-  margin-top: 10px;
-}
-
-.advantage p {
-  font-size: 1rem;
-  color: #555;
-  margin-top: 5px;
-}
-/* 06 - Section Comment ça marche */
+/* 06 - Comment ça marche */
 .how-it-works {
   background: #ffffff;
   padding: 60px 20px;
@@ -329,39 +273,13 @@ a {
   margin-top: 30px;
 }
 
-.step-box {
-  background: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
-  width: 200px;
-  text-align: center;
-}
-
-.step h3 {
-  font-size: 2.5rem;
-  color: #1e3a5f;
-}
-
 /* 07 - Footer */
 .footer {
-  background-color: #0b2239;
+  background: #0b2239;
   color: #ffffff;
   padding: 30px 0;
   text-align: center;
   margin-top: auto;
-}
-
-.footer nav {
-  margin-top: 10px;
-}
-
-.footer nav a {
-  color: #d4af37;
-  margin: 0 10px;
-}
-
-.footer nav a:hover {
-  text-decoration: underline;
 }
 
 /* 08 - Réseaux sociaux */
@@ -382,266 +300,57 @@ a {
   transform: scale(1.2);
 }
 
-/* 09 - Effets divers */
-.hero-wrapper:hover .hero-image {
-  transform: scale(1.05);
-  transition: transform 0.5s ease;
-}
-
-.btn-primary:hover {
-  background-color: #345b87;
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-/* Responsive Mobile */
+/* 09 - Responsive Mobile */
 @media (max-width: 768px) {
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-search-form {
-    flex-direction: column;
-    padding: 20px;
-    gap: 10px;
-  }
-
-  .hero-search-form select,
-  .hero-search-form input,
-  .hero-search-form button {
-    min-width: 100%;
-    font-size: 1rem;
-  }
-
-  .terrain-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .terrain-card {
-    width: 90%;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    background: #0b2239;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: none;
-  }
-
-  .header-container {
-    flex-direction: column;
-  }
-
-  .footer nav {
-    flex-direction: column;
-    gap: 10px;
-  }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-search-form { flex-direction: column; gap: 10px; }
+  .terrain-cards { flex-direction: column; align-items: center; }
+  .terrain-card { width: 90%; }
 }
 
-/* Affichage automatique du menu sur desktop */
-@media (min-width: 769px) {
-  .nav-links {
-    display: flex !important;
-  }
-}
-
-
-/* Ajout du style pour terrains.html - Filtres et cartes */
-
-/* Section Filtres */
-.search-filters {
-  background: #ffffff;
-  padding: 30px 20px;
-  margin-top: -60px;
-  position: relative;
-  z-index: 10;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  border-radius: 15px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+/* 10 - Filtres Terrains */
 .filters-form {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin-top: -60px;
+  position: relative;
+  z-index: 10;
 }
 
 .filters-form select,
-.filters-form input {
+.filters-form input,
+.filters-form button {
   padding: 12px 15px;
   font-size: 1rem;
-  border: 1px solid #ccc;
   border-radius: 8px;
-  background: #f9f9f9;
-  min-width: 180px;
-  flex: 1 1 180px;
-}
-
-.filters-form button {
-  padding: 12px 25px;
-  background-color: #d4af37;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
   transition: all 0.3s ease;
-  flex: 1 1 180px;
 }
 
 .filters-form button:hover {
-  background-color: #c29d2e;
-  transform: scale(1.05);
-}
-.filters {
-  /* Ton style actuel (flex, padding, background, etc.) */
-  
-  transition: all 0.4s ease; /* ← Tu ajoutes ça ici */
-}
-
-.filters select,
-.filters input,
-.filters button {
-  transition: all 0.4s ease; /* ← Et ici aussi */
-}
-
-
-/* Responsive filtres */
-@media (max-width: 768px) {
-  .filters-form {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .filters-form select,
-  .filters-form input,
-  .filters-form button {
-    width: 100%;
-  }
-}
-.filters select:hover,
-.filters input:hover,
-.filters button:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-/* Terrain Cards amélioré */
-.terrain-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  margin-top: 40px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.terrain-card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 280px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.terrain-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.terrain-card h3 {
-  margin: 15px 0 5px 0;
-  font-size: 1.2rem;
-  color: #1e3a5f;
-}
-
-.terrain-card p {
-  margin-bottom: 15px;
-  color: #555;
-}
-
-.terrain-card:hover {
-  transform: translateY(-5px);
-}
-
-.btn-link {
-  color: #d4af37;
-  font-weight: bold;
-  margin-bottom: 15px;
-  display: inline-block;
-}
-
-.btn-link:hover {
-  text-decoration: underline;
-}
-
-/* Style pour .page-title */
-
-/* 12 - Page-Titre amélioré */
+/* 11 - Page-Titre */
 .page-title {
-  margin-top: 120px; /* Assez haut pour être visible sous le header */
+  margin-top: 140px;
   text-align: center;
-  padding: 20px 0;
 }
 
 .page-title h1 {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   color: #1e3a5f;
-  margin-bottom: 10px;
-}
 }
 
-
-/* 14 - Optimisation Mobile filtres */
-
-@media (max-width: 768px) {
-  .filters {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    gap: 10px;
-  }
-
-  .filters select,
-  .filters input,
-  .filters button {
-    width: 100%;
-    max-width: 300px;
-    margin: 8px 0;
-    font-size: 0.9rem;
-    padding: 10px 14px;
-    border-radius: 10px;
-  }
-}
-
-/* 15 - Effets Hover filtres */
-.filters select:hover,
-.filters input:hover,
-.filters button:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
-/* 16 - Animation Douce Formulaires */
-.filters select,
-.filters input,
-.filters button {
-  transition: all 0.3s ease;
-}
-/* Bouton Connexion dans le menu */
+/* 12 - Bonus Animations / Optimisations */
 .btn-login {
   background-color: #d4af37;
-  color: white;
   padding: 8px 15px;
   border-radius: 8px;
   font-weight: bold;
@@ -651,237 +360,4 @@ a {
 .btn-login:hover {
   background-color: #c29d2e;
   transform: scale(1.05);
-}
-/* 17 - Optimisation Responsive Mobile Ultra Doux */
-@media (max-width: 768px) {
-  
-  /* Ajuste l'espacement général */
-  body {
-    padding: 0 10px;
-  }
-
-  /* Hero content */
-  .hero-content h1 {
-    font-size: 1.8rem;
-    line-height: 1.3;
-  }
-
-  .hero-search-form {
-    gap: 12px;
-    padding: 15px 20px;
-  }
-
-  .hero-search-form select,
-  .hero-search-form input,
-  .hero-search-form button {
-    font-size: 0.95rem;
-    padding: 10px 14px;
-  }
-
-  /* Titres sections */
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  /* Cartes terrains */
-  .terrain-card {
-    width: 95%;
-    margin-bottom: 20px;
-  }
-
-  .terrain-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .terrain-card p {
-    font-size: 0.95rem;
-  }
-
-  /* Filtres */
-  .filters-form {
-    gap: 10px;
-  }
-
-  .filters-form select,
-  .filters-form input,
-  .filters-form button {
-    max-width: 280px;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 20px 0;
-    font-size: 0.9rem;
-  }
-}
-
-/* 18 - Bonus - Style avancé des cartes terrains Mobile */
-@media (max-width: 768px) {
-
-  .terrain-card {
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-
-  .terrain-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-  }
-
-  .terrain-card h3,
-  .terrain-card p {
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .terrain-card img {
-    border-bottom: 1px solid #eee;
-  }
-
-  .btn-link {
-    display: block;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-
-}
-
-/* Correction de la taille des filtres et boutons sur mobile */
-@media (max-width: 768px) {
-
-  .filters-form select,
-  .filters-form input,
-  .filters-form button {
-    width: 90%; /* plus étroit */
-    max-width: 280px;
-    font-size: 1rem;
-    padding: 10px 14px;
-    border-radius: 10px;
-  }
-
-  .filters-form {
-    gap: 10px;
-    padding: 15px;
-    align-items: center;
-  }
-}
-/* ===== Version Ultra-Compacte Responsive Mobile ===== */
-@media (max-width: 768px) {
-
-  /* Réduction générale */
-  body {
-    padding: 0 8px;
-  }
-
-  /* Header + Navbar */
-  .header-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 8px;
-    background: #0b2239;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .nav-links a {
-    font-size: 0.95rem;
-  }
-
-  /* Hero Content */
-  .hero-content h1 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-  }
-
-  .btn-primary {
-    padding: 10px 20px;
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-
-  /* Formulaire de recherche */
-  .hero-search-form {
-    flex-direction: column;
-    padding: 15px 20px;
-    gap: 12px;
-  }
-
-  .hero-search-form select,
-  .hero-search-form input,
-  .hero-search-form button {
-    width: 100%;
-    max-width: 260px;
-    font-size: 0.95rem;
-    padding: 10px 14px;
-  }
-
-  /* Cartes de terrains */
-  .terrain-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .terrain-card {
-    width: 90%;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  .terrain-card img {
-    height: 160px;
-  }
-
-  .terrain-card h3 {
-    font-size: 1.1rem;
-    margin: 10px 0 5px;
-  }
-
-  .terrain-card p {
-    font-size: 0.95rem;
-  }
-
-  /* Filtres Terrains */
-  .filters-form {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 15px;
-  }
-
-  .filters-form select,
-  .filters-form input,
-  .filters-form button {
-    width: 100%;
-    max-width: 280px;
-    font-size: 0.95rem;
-    padding: 10px 14px;
-  }
-
-  .filters-form button {
-    font-weight: bold;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 20px 0;
-    font-size: 0.85rem;
-  }
-
-  .footer nav {
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .social-links {
-    margin-top: 15px;
-    gap: 15px;
-  }
 }
