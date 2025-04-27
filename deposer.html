@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Déposer une annonce - Petite Côte Immo</title>
+  <title>Déposer une Annonce - Petite Côte Immo</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
       <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="terrains.html">Terrains</a></li>
-        <li><a href="deposer.html">Déposer</a></li>
+        <li><a href="deposer.html" class="active">Déposer</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -26,39 +26,42 @@
   </div>
 </header>
 
-<section class="featured-terrains">
+<section class="deposer-section">
   <div class="container">
-    <h2>Déposer votre terrain</h2>
-    <form id="deposerForm" class="search-form">
+    <h1>Déposer une annonce</h1>
+
+    <form id="deposerForm" enctype="multipart/form-data" class="deposer-form">
+      <h2>Informations personnelles</h2>
+      <input type="text" name="prenom" placeholder="Prénom" required>
+      <input type="text" name="nom" placeholder="Nom" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="telephone" placeholder="Téléphone" required>
+      <input type="text" name="codeSecret" placeholder="Code secret (8 caractères)" minlength="8" maxlength="8" pattern="[A-Za-z0-9]{8}" title="8 lettres ou chiffres" required>
+
+      <h2>Informations sur le terrain</h2>
       <input type="text" name="titre" placeholder="Titre de l'annonce" required>
-      <input type="text" name="localisation" placeholder="Localisation" required>
-      <input type="number" name="superficie" placeholder="Superficie (m²)" required>
-      <input type="number" name="prix" placeholder="Prix (€)" required>
-      <input type="file" name="image" accept="image/*" required>
-      <button type="submit" class="btn-secondary">Déposer</button>
+      <textarea name="description" placeholder="Description" rows="5" required></textarea>
+      <input type="text" name="prix" placeholder="Prix (€)" required>
+      <input type="text" name="superficie" placeholder="Superficie (m²)" required>
+      <input type="text" name="localisation" placeholder="Localisation exacte" required>
+
+      <h2>Photos du terrain (5 max)</h2>
+      <input type="file" name="photos" accept="image/*" multiple>
+
+      <button type="submit" class="btn-primary">Valider l'annonce</button>
     </form>
+
+    <div id="confirmation" style="display:none; margin-top: 30px;">
+      <h2>Annonce enregistrée !</h2>
+      <p>Merci pour votre confiance. Vous pouvez consulter et gérer votre annonce dans votre espace personnel.</p>
+      <p><strong>Gardez bien votre code secret pour vous connecter !</strong></p>
+    </div>
   </div>
 </section>
 
 <footer class="footer">
   <div class="container">
     <p>© 2025 Petite Côte Immo</p>
-    <nav>
-      <a href="a-propos.html">À propos</a> | 
-      <a href="contact.html">Contact</a> | 
-      <a href="#">Société</a>
-    </nav>
-    <div class="social-links">
-      <a href="https://instagram.com/toncompte" target="_blank">
-        <img src="assets/images/icons/instagram-icon.svg" alt="Instagram" class="social-icon">
-      </a>
-      <a href="https://facebook.com/toncompte" target="_blank">
-        <img src="assets/images/icons/facebook-icon.svg" alt="Facebook" class="social-icon">
-      </a>
-      <a href="https://linkedin.com/in/toncompte" target="_blank">
-        <img src="assets/images/icons/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
-      </a>
-    </div>
   </div>
 </footer>
 
@@ -66,4 +69,3 @@
 
 </body>
 </html>
-
