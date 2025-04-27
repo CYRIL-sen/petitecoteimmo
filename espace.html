@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Personnel - Petite Côte Immo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-container">
+    <a href="index.html">
+      <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="terrains.html">Terrains</a></li>
+        <li><a href="deposer.html">Déposer</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="espace-section">
+  <div class="container">
+    <h1>Connexion à votre espace</h1>
+
+    <form id="loginForm" class="login-form">
+      <input type="email" id="loginEmail" placeholder="Votre email" required>
+      <input type="text" id="loginCode" placeholder="Votre code secret" minlength="8" maxlength="8" pattern="[A-Za-z0-9]{8}" required>
+      <button type="submit" class="btn-primary">Se connecter</button>
+    </form>
+
+    <div id="espaceContent" style="display:none; margin-top: 40px;">
+      <h2>Vos annonces</h2>
+      <div id="annoncesList"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Petite Côte Immo</p>
+  </div>
+</footer>
+
+<script src="assets/js/espace.js"></script>
+
+</body>
+</html>
 
