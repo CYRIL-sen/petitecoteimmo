@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Petite Côte Immo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-container">
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="assets/images/logo/petitecoteimmo-logo.png" alt="Petite Côte Immo" class="logo">
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="connexion-section">
+  <div class="container">
+    <h1>Se connecter à mon Espace</h1>
+    <form id="loginForm" class="connexion-form">
+      <input type="email" id="loginEmail" placeholder="Votre Email" required>
+      <input type="password" id="loginCode" placeholder="Votre code (8 caractères)" required minlength="8" maxlength="8">
+      <button type="submit" class="btn-primary">Connexion</button>
+      <p class="link-helper">Pas encore de compte ? <a href="espace.html">Créer un compte</a></p>
+      <p class="link-helper">Mot de passe oublié ? <a href="#" id="forgotPasswordLink">Cliquez ici</a></p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Petite Côte Immo</p>
+  </div>
+</footer>
+
+<script src="assets/js/connexion.js"></script>
+
+</body>
+</html>
 
